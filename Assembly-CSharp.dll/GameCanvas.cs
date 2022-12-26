@@ -486,7 +486,7 @@ public class GameCanvas : IActionListener
 		{
 			timeNow = mSystem.currentTimeMillis();
 		}
-		Res.updateOnScreenDebug();
+		//Res.updateOnScreenDebug();
 		try
 		{
 			if (TouchScreenKeyboard.visible)
@@ -615,13 +615,13 @@ public class GameCanvas : IActionListener
 				{
 					currentScreen.update();
 				}
-				debug("F", 0);
+				//debug("F", 0);
 				if (!panel.isShow && ChatPopup.serverChatPopUp == null)
 				{
 					currentScreen.updateKey();
 				}
 				Hint.update();
-				SoundMn.gI().update();
+				//SoundMn.gI().update();
 			}
 			debug("Ix", 0);
 			Timer.update();
@@ -730,17 +730,17 @@ public class GameCanvas : IActionListener
 			ServerListScreen.testConnect = 0;
 		}
 		instance.resetToLoginScrz();
-		if (Main.typeClient == 6)
-		{
-			if (currentScreen != serverScreen && currentScreen != loginScr)
-			{
-				startOKDlg(mResources.maychutathoacmatsong);
-			}
-		}
-		else
-		{
-			startOKDlg(mResources.maychutathoacmatsong);
-		}
+		//if (Main.typeClient == 6)
+		//{
+		//	if (currentScreen != serverScreen && currentScreen != loginScr)
+		//	{
+		//		startOKDlg(mResources.maychutathoacmatsong);
+		//	}
+		//}
+		//else
+		//{
+		//	startOKDlg(mResources.maychutathoacmatsong);
+		//}
 		mSystem.endKey();
 	}
 
@@ -866,7 +866,7 @@ public class GameCanvas : IActionListener
 	{
 		try
 		{
-			SoundMn.gI().stopAll();
+			//SoundMn.gI().stopAll();
 			LoginScr.isContinueToLogin = false;
 			TileMap.lastType = (TileMap.bgType = 0);
 			Char.clearMyChar();

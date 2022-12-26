@@ -293,7 +293,7 @@ public class RadarScr : mScreen
 		}
 		cmyText = 0;
 		hText = 0;
-		SoundMn.gI().radarItem();
+		//SoundMn.gI().radarItem();
 	}
 
 	public override void update()
@@ -509,7 +509,7 @@ public class RadarScr : mScreen
 			GameScr.gI().switchToMe();
 			break;
 		}
-		SoundMn.gI().radarClick();
+		//SoundMn.gI().radarClick();
 	}
 
 	private void doClickArrow(int dir)

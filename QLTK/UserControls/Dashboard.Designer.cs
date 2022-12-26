@@ -43,12 +43,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.cbDelay = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            this.cbCheckOut = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            this.nDelay = new Siticone.Desktop.UI.WinForms.SiticoneNumericUpDown();
             this.nZone = new Siticone.Desktop.UI.WinForms.SiticoneNumericUpDown();
             this.cbbMap = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
             this.btnEdit = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnUpdate = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnDelete = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.btnStop = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.btnClose = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnLogin = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnAdd = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.cbAddBatch = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
@@ -61,6 +64,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).BeginInit();
             this.siticonePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nZone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -230,12 +234,15 @@
             this.siticonePanel1.BackColor = System.Drawing.Color.Transparent;
             this.siticonePanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
             this.siticonePanel1.BorderRadius = 2;
+            this.siticonePanel1.Controls.Add(this.cbDelay);
+            this.siticonePanel1.Controls.Add(this.cbCheckOut);
+            this.siticonePanel1.Controls.Add(this.nDelay);
             this.siticonePanel1.Controls.Add(this.nZone);
             this.siticonePanel1.Controls.Add(this.cbbMap);
             this.siticonePanel1.Controls.Add(this.btnEdit);
             this.siticonePanel1.Controls.Add(this.btnUpdate);
             this.siticonePanel1.Controls.Add(this.btnDelete);
-            this.siticonePanel1.Controls.Add(this.btnStop);
+            this.siticonePanel1.Controls.Add(this.btnClose);
             this.siticonePanel1.Controls.Add(this.btnLogin);
             this.siticonePanel1.Controls.Add(this.btnAdd);
             this.siticonePanel1.Controls.Add(this.cbAddBatch);
@@ -255,6 +262,75 @@
             this.siticonePanel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
             this.siticonePanel1.Size = new System.Drawing.Size(280, 400);
             this.siticonePanel1.TabIndex = 1;
+            // 
+            // cbDelay
+            // 
+            this.cbDelay.Animated = true;
+            this.cbDelay.AutoSize = true;
+            this.cbDelay.CheckedState.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.cbDelay.CheckedState.BorderRadius = 1;
+            this.cbDelay.CheckedState.BorderThickness = 0;
+            this.cbDelay.CheckedState.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.cbDelay.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F);
+            this.cbDelay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbDelay.Location = new System.Drawing.Point(15, 245);
+            this.cbDelay.Name = "cbDelay";
+            this.cbDelay.Size = new System.Drawing.Size(129, 23);
+            this.cbDelay.TabIndex = 13;
+            this.cbDelay.Text = "delay giữa 2 lần hs";
+            this.cbDelay.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbDelay.UncheckedState.BorderRadius = 1;
+            this.cbDelay.UncheckedState.BorderThickness = 0;
+            this.cbDelay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // cbCheckOut
+            // 
+            this.cbCheckOut.Animated = true;
+            this.cbCheckOut.AutoSize = true;
+            this.cbCheckOut.CheckedState.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.cbCheckOut.CheckedState.BorderRadius = 1;
+            this.cbCheckOut.CheckedState.BorderThickness = 0;
+            this.cbCheckOut.CheckedState.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.cbCheckOut.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F);
+            this.cbCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbCheckOut.Location = new System.Drawing.Point(15, 265);
+            this.cbCheckOut.Name = "cbCheckOut";
+            this.cbCheckOut.Size = new System.Drawing.Size(131, 23);
+            this.cbCheckOut.TabIndex = 13;
+            this.cbCheckOut.Text = "check out tab game";
+            this.cbCheckOut.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbCheckOut.UncheckedState.BorderRadius = 1;
+            this.cbCheckOut.UncheckedState.BorderThickness = 0;
+            this.cbCheckOut.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // nDelay
+            // 
+            this.nDelay.BackColor = System.Drawing.Color.Transparent;
+            this.nDelay.BorderThickness = 0;
+            this.nDelay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nDelay.DisabledState.Parent = this.nDelay;
+            this.nDelay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(14)))), ((int)(((byte)(31)))));
+            this.nDelay.FocusedState.Parent = this.nDelay;
+            this.nDelay.Font = new System.Drawing.Font("Bahnschrift Condensed", 9F);
+            this.nDelay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.nDelay.Location = new System.Drawing.Point(151, 245);
+            this.nDelay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nDelay.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nDelay.Name = "nDelay";
+            this.nDelay.ShadowDecoration.Parent = this.nDelay;
+            this.nDelay.Size = new System.Drawing.Size(114, 23);
+            this.nDelay.TabIndex = 12;
+            this.nDelay.UpDownButtonFillColor = System.Drawing.SystemColors.HotTrack;
+            this.nDelay.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(14)))), ((int)(((byte)(31)))));
+            this.nDelay.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             // 
             // nZone
             // 
@@ -416,7 +492,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(80, 28);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -444,29 +520,30 @@
             this.btnDelete.Text = "DELETE";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnStop
+            // btnClose
             // 
-            this.btnStop.Animated = true;
-            this.btnStop.BorderRadius = 2;
-            this.btnStop.CheckedState.Parent = this.btnStop;
-            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStop.CustomImages.Parent = this.btnStop;
-            this.btnStop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStop.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStop.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStop.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStop.DisabledState.Parent = this.btnStop;
-            this.btnStop.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.btnStop.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.ForeColor = System.Drawing.Color.Black;
-            this.btnStop.HoverState.Parent = this.btnStop;
-            this.btnStop.Location = new System.Drawing.Point(100, 211);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.PressedColor = System.Drawing.Color.White;
-            this.btnStop.ShadowDecoration.Parent = this.btnStop;
-            this.btnStop.Size = new System.Drawing.Size(80, 28);
-            this.btnStop.TabIndex = 10;
-            this.btnStop.Text = "STOP";
+            this.btnClose.Animated = true;
+            this.btnClose.BorderRadius = 2;
+            this.btnClose.CheckedState.Parent = this.btnClose;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.CustomImages.Parent = this.btnClose;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.DisabledState.Parent = this.btnClose;
+            this.btnClose.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.btnClose.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.HoverState.Parent = this.btnClose;
+            this.btnClose.Location = new System.Drawing.Point(100, 211);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.PressedColor = System.Drawing.Color.White;
+            this.btnClose.ShadowDecoration.Parent = this.btnClose;
+            this.btnClose.Size = new System.Drawing.Size(80, 28);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "CLOSE";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnLogin
             // 
@@ -490,7 +567,7 @@
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(80, 28);
             this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "START";
+            this.btnLogin.Text = "LOGIN";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnAdd
@@ -730,6 +807,8 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataAccount)).EndInit();
             this.siticonePanel1.ResumeLayout(false);
+            this.siticonePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nZone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -754,7 +833,7 @@
         private Siticone.Desktop.UI.WinForms.SiticoneNumericUpDown nZone;
         private Siticone.Desktop.UI.WinForms.SiticoneComboBox cbbMap;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnUpdate;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton btnStop;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -763,5 +842,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        internal Siticone.Desktop.UI.WinForms.SiticoneCheckBox cbDelay;
+        internal Siticone.Desktop.UI.WinForms.SiticoneNumericUpDown nDelay;
+        internal Siticone.Desktop.UI.WinForms.SiticoneCheckBox cbCheckOut;
     }
 }

@@ -24,7 +24,9 @@ namespace QLTK
 {
     public partial class mainForm : Form
     {
-        public static mainForm gI;
+        static mainForm intance;
+        public static mainForm gI
+            => intance == null ? intance = new mainForm() : intance;
         public mainForm()
         {
             InitializeComponent();
@@ -38,10 +40,15 @@ namespace QLTK
             setting = new Setting();
             setting.Dock = DockStyle.Fill;
             PanelSlider.Controls.Add(setting);
-            gI = this;
+
+            infomation = new Infomation();
+            infomation.Dock = DockStyle.Fill;
+            PanelSlider.Controls.Add(infomation);
+
         }
         public Dashboard dashboard;
         public Setting setting;
+        public Infomation infomation;
 
         public DateTime time_expired;
 
@@ -89,30 +96,37 @@ namespace QLTK
         {
             setting.BringToFront();
         }
-
+        private void btnInfomation_Click(object sender, EventArgs e)
+        {
+            infomation.BringToFront();
+        }
         void update_date_Tick(object sender, EventArgs e)
         {
             if (time_expired != null)
             {
                 var timeSpan = TimeHelper.gI().calculator(time_expired);
-                string date = "forever";
+                if (timeSpan.Days > 9999)
+                {
+                    lbDate.Text = "forever";
+                    update_date.Enabled = false;
+                    update_date.Stop();
+                    return;
+                }
                 if (timeSpan.Days > 0)
+                    lbDate.Text = $"{timeSpan.Days}d : {timeSpan.Hours}h : {timeSpan.Minutes}m : {timeSpan.Seconds}s";
+                else if(timeSpan.Hours > 0)
+                    lbDate.Text = $"{timeSpan.Hours}h : {timeSpan.Minutes}m : {timeSpan.Seconds}s";
+                else if(timeSpan.Minutes > 0)
+                    lbDate.Text = $"{timeSpan.Minutes}m : {timeSpan.Seconds}s";
+                else if(timeSpan.Seconds > 0)
+                    lbDate.Text = $"{timeSpan.Seconds}s";
+                else
                 {
-                    date += timeSpan.Days + "d : ";
+                    dashboard.close();
+                    lbDate.Text = "out of date";
+                    update_date.Enabled = false;
+                    update_date.Stop();
                 }
-                if (timeSpan.Days > 0 || timeSpan.Hours > 0)
-                {
-                    date += timeSpan.Hours + "h : ";
-                }
-                if (timeSpan.Hours > 0 || timeSpan.Minutes > 0)
-                {
-                    date += timeSpan.Minutes + "m : ";
-                }
-                if (timeSpan.Minutes > 0 || timeSpan.Seconds >= 0)
-                {
-                    date += timeSpan.Seconds + "s";
-                }
-                lbDate.Text = date;
             }
             //TimeHelper.gI().DateTimeNow().ToString("dd/MM/yyyy HH:mm:ss");
         }
@@ -120,6 +134,9 @@ namespace QLTK
         
         void mainFrom_Load(object sender, EventArgs e)
         {
+            setting.Setting_Load();
+
+            AntiCracker.gI().check_key_license();
         }
 
         private void btnController_Click(object sender, EventArgs e)

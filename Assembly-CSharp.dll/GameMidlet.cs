@@ -56,12 +56,12 @@ public class GameMidlet
 
 	public static void sendSMS(string data, string to, Command successAction, Command failAction)
 	{
-		Cout.println("SEND SMS");
+		//Cout.println("SEND SMS");
 	}
 
 	public static void flatForm(string url)
 	{
-		Cout.LogWarning("PLATFORM REQUEST: " + url);
+		//Cout.LogWarning("PLATFORM REQUEST: " + url);
 		Application.OpenURL(url);
 	}
 
@@ -72,7 +72,7 @@ public class GameMidlet
 
 	public void platformRequest(string url)
 	{
-		Cout.LogWarning("PLATFORM REQUEST: " + url);
+		//Cout.LogWarning("PLATFORM REQUEST: " + url);
 		Application.OpenURL(url);
 	}
 }

@@ -50,7 +50,7 @@ internal class ImageSource
 		{
 			ex.StackTrace.ToString();
 		}
-		Res.outz("vS size= " + vSource.size() + " vRMS size= " + vRms.size());
+		//Res.outz("vS size= " + vSource.size() + " vRMS size= " + vRms.size());
 		for (int j = 0; j < vSource.size(); j++)
 		{
 			ImageSource imageSource = (ImageSource)vSource.elementAt(j);

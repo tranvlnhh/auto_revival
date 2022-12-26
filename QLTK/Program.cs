@@ -15,14 +15,9 @@ namespace QLTK
         [STAThread]
         static void Main()
         {
-            if(AntiCracker.gI().check_key_license())
-            {
-                Environment.Exit(0);
-                return;
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(mainForm.gI);
         }
     }
 }

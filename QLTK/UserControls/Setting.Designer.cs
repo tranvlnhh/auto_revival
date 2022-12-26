@@ -391,7 +391,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "Setting";
             this.Size = new System.Drawing.Size(800, 400);
-            this.Load += new System.EventHandler(this.Setting_Load);
             this.siticoneGroupBox1.ResumeLayout(false);
             this.siticoneGroupBox1.PerformLayout();
             this.siticoneGroupBox2.ResumeLayout(false);

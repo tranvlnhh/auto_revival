@@ -27,7 +27,7 @@ public class ClientInput : mScreen, IActionListener
 		{
 			w = 320;
 		}
-		Res.outz("title= " + t);
+		//Res.outz("title= " + t);
 		strPaint = mFont.tahoma_7b_dark.splitFontArray(t, w - 20);
 		x = (GameCanvas.w - w) / 2;
 		tf = new TField[nTf];

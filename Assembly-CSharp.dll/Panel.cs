@@ -1736,7 +1736,7 @@ public class Panel : IActionListener, IChatable
 		timeShow = 20;
 		isShow = true;
 		isClose = false;
-		SoundMn.gI().panelOpen();
+		//SoundMn.gI().panelOpen();
 		if (isTypeShop())
 		{
 			Char.myCharz().setPartOld();
@@ -2440,7 +2440,7 @@ public class Panel : IActionListener, IChatable
 			keyTouchMapButton = 1;
 			if (GameCanvas.isPointerJustRelease)
 			{
-				SoundMn.gI().buttonClick();
+				//SoundMn.gI().buttonClick();
 				waitToPerform = 2;
 				GameCanvas.clearAllPointerEvent();
 			}
@@ -2767,7 +2767,7 @@ public class Panel : IActionListener, IChatable
 			checkOptionSelect();
 			pointerDownTime = 0;
 			waitToPerform = 10;
-			SoundMn.gI().panelClick();
+			//SoundMn.gI().panelClick();
 		}
 		else if (selected != -1 && pointerDownTime > 5)
 		{
@@ -2870,7 +2870,7 @@ public class Panel : IActionListener, IChatable
 			return;
 		}
 		size_tab = 0;
-		SoundMn.gI().panelClick();
+		//SoundMn.gI().panelClick();
 		switch (type)
 		{
 		case 21:
@@ -2997,7 +2997,7 @@ public class Panel : IActionListener, IChatable
 
 	private void setTabTool()
 	{
-		SoundMn.gI().getSoundOption();
+		//SoundMn.gI().getSoundOption();
 		currentListLength = strTool.Length;
 		ITEM_HEIGHT = 24;
 		selected = (GameCanvas.isTouch ? (-1) : 0);
@@ -6495,8 +6495,8 @@ public class Panel : IActionListener, IChatable
 		{
 			Service.gI().giaodich(3, -1, -1, -1);
 		}
-		Res.outz("HIDE PANELLLLLLLLLLLLLLLLLLLLLL");
-		SoundMn.gI().buttonClose();
+		//Res.outz("HIDE PANELLLLLLLLLLLLLLLLLLLLLL");
+		//SoundMn.gI().buttonClose();
 		GameScr.isPaint = true;
 		TileMap.lastPlanetId = -1;
 		imgMap = null;
@@ -6542,7 +6542,7 @@ public class Panel : IActionListener, IChatable
 		{
 			Service.gI().sendThachDau(-1);
 		}
-		SoundMn.gI().buttonClose();
+		//SoundMn.gI().buttonClose();
 		GameScr.isPaint = true;
 		TileMap.lastPlanetId = -1;
 		if (imgMap != null)
@@ -6880,7 +6880,7 @@ public class Panel : IActionListener, IChatable
 			{
 				currItem = (Item)GameCanvas.panel.vFriendGD.elementAt(selected);
 			}
-			Res.outz2("toi day select= " + selected);
+			//Res.outz2("toi day select= " + selected);
 			MyVector myVector = new MyVector();
 			myVector.addElement(new Command(mResources.CLOSE, this, 8000, currItem));
 			if (currItem != null)
@@ -9197,8 +9197,8 @@ public class Panel : IActionListener, IChatable
 					{
 						if (GameCanvas.gameTick % 10 == 0)
 						{
-							Effect me = new Effect(21, xS - 10, yS + 25, 4, 1, 1);
-							EffecMn.addEff(me);
+							//Effect me = new Effect(21, xS - 10, yS + 25, 4, 1, 1);
+							//EffecMn.addEff(me);
 							time--;
 						}
 					}
@@ -9588,7 +9588,7 @@ public class Panel : IActionListener, IChatable
 			SoundMn.gI().AuraToolOption();
 			break;
 		case 2:
-			SoundMn.gI().soundToolOption();
+			//SoundMn.gI().soundToolOption();
 			break;
 		case 3:
 			if (Main.isPC)

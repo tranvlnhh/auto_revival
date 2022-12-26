@@ -9,7 +9,7 @@ internal class Controller2
 	{
 		try
 		{
-			Res.outz("cmd=" + msg.command);
+			////Res.outz("cmd=" + msg.command);
 			switch (msg.command)
 			{
 			case sbyte.MinValue:
@@ -32,13 +32,13 @@ internal class Controller2
 				}
 			case 113:
 			{
-				int loop = msg.reader().readByte();
-				int layer = msg.reader().readByte();
-				int id4 = msg.reader().readUnsignedByte();
-				short x2 = msg.reader().readShort();
-				short y2 = msg.reader().readShort();
-				short loopCount = msg.reader().readShort();
-				EffecMn.addEff(new Effect(id4, x2, y2, layer, loop, loopCount));
+				//int loop = msg.reader().readByte();
+				//int layer = msg.reader().readByte();
+				//int id4 = msg.reader().readUnsignedByte();
+				//short x2 = msg.reader().readShort();
+				//short y2 = msg.reader().readShort();
+				//short loopCount = msg.reader().readShort();
+				//EffecMn.addEff(new Effect(id4, x2, y2, layer, loop, loopCount));
 				break;
 			}
 			case 48:
@@ -188,7 +188,7 @@ internal class Controller2
 				for (int k = 0; k < b9; k++)
 				{
 					int num13 = msg.reader().readInt();
-					Res.outz("char ID=" + num13);
+					////Res.outz("char ID=" + num13);
 					array[k] = null;
 					if (num13 != Char.myCharz().charID)
 					{
@@ -209,7 +209,7 @@ internal class Controller2
 			case -126:
 			{
 				sbyte b26 = msg.reader().readByte();
-				Res.outz("type quay= " + b26);
+				////Res.outz("type quay= " + b26);
 				if (b26 == 1)
 				{
 					sbyte b27 = msg.reader().readByte();
@@ -229,7 +229,7 @@ internal class Controller2
 				Npc npc = GameScr.findNPCInMap(id3);
 				sbyte b20 = msg.reader().readByte();
 				npc.duahau = new int[b20];
-				Res.outz("N DUA HAU= " + b20);
+				////Res.outz("N DUA HAU= " + b20);
 				for (int num25 = 0; num25 < b20; num25++)
 				{
 					npc.duahau[num25] = msg.reader().readShort();
@@ -318,7 +318,7 @@ internal class Controller2
 			}
 			case 101:
 			{
-				Res.outz("big boss--------------------------------------------------");
+			//	//Res.outz("big boss--------------------------------------------------");
 				BigBoss bigBoss2 = Mob.getBigBoss();
 				if (bigBoss2 == null)
 				{
@@ -336,13 +336,13 @@ internal class Controller2
 					else
 					{
 						sbyte b25 = msg.reader().readByte();
-						Res.outz("CHUONG nChar= " + b25);
+						////Res.outz("CHUONG nChar= " + b25);
 						Char[] array8 = new Char[b25];
 						int[] array9 = new int[b25];
 						for (int num32 = 0; num32 < b25; num32++)
 						{
 							int num33 = msg.reader().readInt();
-							Res.outz("char ID=" + num33);
+						//	//Res.outz("char ID=" + num33);
 							array8[num32] = null;
 							if (num33 != Char.myCharz().charID)
 							{
@@ -429,7 +429,7 @@ internal class Controller2
 				for (int num43 = 0; num43 < item2.itemOption.Length; num43++)
 				{
 					int num44 = msg.reader().readUnsignedByte();
-					Res.outz("id o= " + num44);
+					////Res.outz("id o= " + num44);
 					int param3 = msg.reader().readUnsignedShort();
 					if (num44 != -1)
 					{
@@ -474,7 +474,7 @@ internal class Controller2
 				for (int num35 = 0; num35 < 10; num35++)
 				{
 					array10[num35] = msg.reader().readByte();
-					Res.outz("vlue i= " + array10[num35]);
+				//	//Res.outz("vlue i= " + array10[num35]);
 				}
 				GameScr.gI().onKSkill(array10);
 				GameScr.gI().onOSkill(array10);
@@ -513,13 +513,13 @@ internal class Controller2
 			{
 				short num26 = msg.reader().readShort();
 				string text2 = msg.reader().readUTF();
-				Res.outz("noi chuyen = " + text2 + "npc ID= " + num26);
+			//	//Res.outz("noi chuyen = " + text2 + "npc ID= " + num26);
 				GameScr.findNPCInMap(num26)?.addInfo(text2);
 				break;
 			}
 			case 123:
 			{
-				Res.outz("SET POSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss");
+			///	//Res.outz("SET POSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss");
 				int num10 = msg.reader().readInt();
 				short xPos = msg.reader().readShort();
 				short yPos = msg.reader().readShort();
@@ -535,7 +535,7 @@ internal class Controller2
 				}
 				if (@char != null)
 				{
-					ServerEffect.addServerEffect((b7 != 0) ? 173 : 60, @char, 1);
+					//ServerEffect.addServerEffect((b7 != 0) ? 173 : 60, @char, 1);
 					@char.setPos(xPos, yPos, b7);
 				}
 				break;
@@ -543,7 +543,7 @@ internal class Controller2
 			case 122:
 			{
 				short num34 = msg.reader().readShort();
-				Res.outz("second login = " + num34);
+			//	//Res.outz("second login = " + num34);
 				LoginScr.timeLogin = num34;
 				LoginScr.currTimeLogin = (LoginScr.lastTimeLogin = mSystem.currentTimeMillis());
 				GameCanvas.endDlg();
@@ -552,7 +552,7 @@ internal class Controller2
 			case 121:
 				mSystem.publicID = msg.reader().readUTF();
 				mSystem.strAdmob = msg.reader().readUTF();
-				Res.outz("SHOW AD public ID= " + mSystem.publicID);
+				////Res.outz("SHOW AD public ID= " + mSystem.publicID);
 				mSystem.createAdmob();
 				break;
 			case -124:
@@ -714,48 +714,52 @@ internal class Controller2
 				}
 				int num8 = msg.reader().readUnsignedByte();
 				sbyte b6 = msg.reader().readByte();
-				Res.outz("modbHoldID= " + b6 + " skillID= " + num8 + "eff ID= " + b4);
-				if (num8 == 32)
+						////Res.outz("modbHoldID= " + b6 + " skillID= " + num8 + "eff ID= " + b4);
+						var mm = GameScr.findMobInMap(b6);
+
+                if (num8 == 32)
 				{
 					if (b4 == 1)
 					{
 						int num9 = msg.reader().readInt();
-						if (num9 == Char.myCharz().charID)
+								var mc = Char.myCharz();
+
+                        if (num9 == mc.charID)
 						{
-							GameScr.findMobInMap(b6).holdEffID = num8;
-							Char.myCharz().setHoldMob(GameScr.findMobInMap(b6));
+                                    mm.holdEffID = num8;
+							mc.setHoldMob(mm);
 						}
 						else if (GameScr.findCharInMap(num9) != null)
 						{
-							GameScr.findMobInMap(b6).holdEffID = num8;
-							GameScr.findCharInMap(num9).setHoldMob(GameScr.findMobInMap(b6));
+                                    mm.holdEffID = num8;
+							GameScr.findCharInMap(num9).setHoldMob(mm);
 						}
 					}
 					else
 					{
-						GameScr.findMobInMap(b6).removeHoldEff();
+						mm.removeHoldEff();
 					}
 				}
 				if (num8 == 40)
 				{
 					if (b4 == 1)
 					{
-						GameScr.findMobInMap(b6).blindEff = true;
+						mm.blindEff = true;
 					}
 					else
 					{
-						GameScr.findMobInMap(b6).removeBlindEff();
+						mm.removeBlindEff();
 					}
 				}
 				if (num8 == 41)
 				{
 					if (b4 == 1)
 					{
-						GameScr.findMobInMap(b6).sleepEff = true;
+						mm.sleepEff = true;
 					}
 					else
 					{
-						GameScr.findMobInMap(b6).removeSleepEff();
+						mm.removeSleepEff();
 					}
 				}
 				break;
@@ -764,7 +768,7 @@ internal class Controller2
 			{
 				ChatTextField.gI().isShow = false;
 				string text4 = msg.reader().readUTF();
-				Res.outz("titile= " + text4);
+				////Res.outz("titile= " + text4);
 				sbyte b32 = msg.reader().readByte();
 				ClientInput.gI().setInput(b32, text4);
 				for (int num45 = 0; num45 < b32; num45++)
@@ -815,7 +819,7 @@ internal class Controller2
 			case 93:
 			{
 				string str = msg.reader().readUTF();
-				str = Res.changeString(str);
+				//str = Res.changeString(str);
 				GameScr.gI().chatVip(str);
 				break;
 			}
@@ -877,7 +881,7 @@ internal class Controller2
 				{
 					int num20 = msg.reader().readInt();
 					sbyte b18 = msg.reader().readByte();
-					Res.outz("---------------actionFlag1:  " + num20 + " : " + b18);
+					//Res.outz("---------------actionFlag1:  " + num20 + " : " + b18);
 					if (num20 == Char.myCharz().charID)
 					{
 						Char.myCharz().cFlag = b18;
@@ -903,7 +907,7 @@ internal class Controller2
 					for (int num22 = 0; num22 < GameScr.vFlag.size(); num22++)
 					{
 						PKFlag pKFlag2 = (PKFlag)GameScr.vFlag.elementAt(num22);
-						Res.outz("i: " + num22 + "  cflag: " + pKFlag2.cflag + "   IDimageFlag: " + pKFlag2.IDimageFlag);
+						//Res.outz("i: " + num22 + "  cflag: " + pKFlag2.cflag + "   IDimageFlag: " + pKFlag2.IDimageFlag);
 					}
 					for (int num23 = 0; num23 < GameScr.vCharInMap.size(); num23++)
 					{
@@ -950,10 +954,10 @@ internal class Controller2
 					flag = true;
 				}
 				sbyte b = msg.reader().readByte();
-				Res.outz("t Indxe= " + b);
+				//Res.outz("t Indxe= " + b);
 				GameCanvas.panel.maxPageShop[b] = msg.reader().readByte();
 				GameCanvas.panel.currPageShop[b] = msg.reader().readByte();
-				Res.outz("max page= " + GameCanvas.panel.maxPageShop[b] + " curr page= " + GameCanvas.panel.currPageShop[b]);
+				//Res.outz("max page= " + GameCanvas.panel.maxPageShop[b] + " curr page= " + GameCanvas.panel.currPageShop[b]);
 				int num = msg.reader().readUnsignedByte();
 				Char.myCharz().arrItemShop[b] = new Item[num];
 				for (int i = 0; i < num; i++)
@@ -963,7 +967,7 @@ internal class Controller2
 					{
 						continue;
 					}
-					Res.outz("template id= " + num2);
+					//Res.outz("template id= " + num2);
 					Char.myCharz().arrItemShop[b][i] = new Item();
 					Char.myCharz().arrItemShop[b][i].template = ItemTemplates.get(num2);
 					Char.myCharz().arrItemShop[b][i].itemId = msg.reader().readShort();

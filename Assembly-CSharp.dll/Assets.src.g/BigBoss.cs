@@ -192,7 +192,7 @@ public class BigBoss : Mob, IMapObject
 		{
 			data.readData2(patch);
 			data.img = GameCanvas.loadImage("/effectdata/" + 101 + "/img.png");
-			Res.outz("read xong data");
+			//Res.outz("read xong data");
 		}
 		catch (Exception)
 		{
@@ -606,12 +606,12 @@ public class BigBoss : Mob, IMapObject
 		}
 		if (shock)
 		{
-			Res.outz("type= " + type);
+			//Res.outz("type= " + type);
 			tShock++;
-			Effect me = new Effect((type != 2) ? 22 : 19, x + tShock * 50, y + 25, 2, 1, -1);
-			EffecMn.addEff(me);
-			Effect me2 = new Effect((type != 2) ? 22 : 19, x - tShock * 50, y + 25, 2, 1, -1);
-			EffecMn.addEff(me2);
+			//Effect me = new Effect((type != 2) ? 22 : 19, x + tShock * 50, y + 25, 2, 1, -1);
+			//EffecMn.addEff(me);
+			//Effect me2 = new Effect((type != 2) ? 22 : 19, x - tShock * 50, y + 25, 2, 1, -1);
+			//EffecMn.addEff(me2);
 			if (tShock == 50)
 			{
 				tShock = 0;

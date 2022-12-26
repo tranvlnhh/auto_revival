@@ -87,7 +87,7 @@ public class EffecMn
 	{
 		for (int i = 0; i < vEff.size(); i++)
 		{
-			((Effect)vEff.elementAt(i)).update();
+            ((Effect)vEff.elementAt(i)).update();
 		}
 	}
 }

@@ -151,7 +151,7 @@ public class Service
 
 	public void combine(sbyte action, MyVector id)
 	{
-		Res.outz("combine");
+		//Res.outz("combine");
 		Message message = null;
 		try
 		{
@@ -163,7 +163,7 @@ public class Service
 				for (int i = 0; i < id.size(); i++)
 				{
 					message.writer().writeByte(((Item)id.elementAt(i)).indexUI);
-					Res.outz("gui id " + ((Item)id.elementAt(i)).indexUI);
+					//Res.outz("gui id " + ((Item)id.elementAt(i)).indexUI);
 				}
 			}
 			session.sendMessage(message);
@@ -179,7 +179,7 @@ public class Service
 
 	public void giaodich(sbyte action, int playerID, sbyte index, int num)
 	{
-		Res.outz2("giao dich action = " + action);
+		//Res.outz2("giao dich action = " + action);
 		Message message = null;
 		try
 		{
@@ -187,18 +187,18 @@ public class Service
 			message.writer().writeByte(action);
 			if (action == 0 || action == 1)
 			{
-				Res.outz2(">>>> len playerID =" + playerID);
+				//Res.outz2(">>>> len playerID =" + playerID);
 				message.writer().writeInt(playerID);
 			}
 			if (action == 2)
 			{
-				Res.outz2("gui len index =" + index + " num= " + num);
+				//Res.outz2("gui len index =" + index + " num= " + num);
 				message.writer().writeByte(index);
 				message.writer().writeInt(num);
 			}
 			if (action == 4)
 			{
-				Res.outz2(">>>> len index =" + index);
+				//Res.outz2(">>>> len index =" + index);
 				message.writer().writeByte(index);
 			}
 			session.sendMessage(message);
@@ -217,9 +217,9 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz(" gui input ");
+			//Res.outz(" gui input ");
 			message = new Message((sbyte)(-125));
-			Res.outz("byte lent = " + t.Length);
+			//Res.outz("byte lent = " + t.Length);
 			message.writer().writeByte(t.Length);
 			for (int i = 0; i < t.Length; i++)
 			{
@@ -257,7 +257,7 @@ public class Service
 
 	public void test(short x, short y)
 	{
-		Res.outz("gui x= " + x + " y= " + y);
+		//Res.outz("gui x= " + x + " y= " + y);
 		Message message = null;
 		try
 		{
@@ -278,7 +278,7 @@ public class Service
 
 	public void test2()
 	{
-		Res.outz("gui test1");
+		//Res.outz("gui test1");
 		Message message = null;
 		try
 		{
@@ -301,7 +301,7 @@ public class Service
 
 	public void mobCapcha(char ch)
 	{
-		Res.outz("cap char c= " + ch);
+		//Res.outz("cap char c= " + ch);
 		Message message = null;
 		try
 		{
@@ -320,7 +320,7 @@ public class Service
 
 	public void friend(sbyte action, int playerId)
 	{
-		Res.outz("add friend");
+		//Res.outz("add friend");
 		Message message = null;
 		try
 		{
@@ -334,7 +334,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -344,7 +344,7 @@ public class Service
 
 	public void getArchivemnt(int index)
 	{
-		Res.outz("get ngoc");
+		//Res.outz("get ngoc");
 		Message message = null;
 		try
 		{
@@ -354,7 +354,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -391,7 +391,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -410,7 +410,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -429,7 +429,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -456,7 +456,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -466,7 +466,7 @@ public class Service
 
 	public void useItem(sbyte type, sbyte where, sbyte index, short template)
 	{
-		Cout.println("USE ITEM! " + type);
+		//Cout.println("USE ITEM! " + type);
 		if (Char.myCharz().statusMe == 14)
 		{
 			return;
@@ -505,7 +505,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -524,7 +524,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -543,7 +543,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -562,7 +562,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -582,7 +582,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -600,7 +600,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -628,7 +628,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -652,7 +652,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -671,7 +671,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -691,7 +691,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -715,7 +715,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -766,24 +766,24 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 	}
 
 	public void setClientType2()
 	{
-		Res.outz("SET CLIENT TYPE");
+		//Res.outz("SET CLIENT TYPE");
 		if (Rms.loadRMSInt("clienttype") != -1)
 		{
 			mSystem.clientType = Rms.loadRMSInt("clienttype");
 		}
 		try
 		{
-			Res.outz("setType");
+			//Res.outz("setType");
 			Message message = messageNotLogin(2);
 			message.writer().writeByte(mSystem.clientType);
 			message.writer().writeByte(mGraphics.zoomLevel);
-			Res.outz("gui zoomlevel = " + mGraphics.zoomLevel);
+			//Res.outz("gui zoomlevel = " + mGraphics.zoomLevel);
 			message.writer().writeBoolean(value: false);
 			message.writer().writeInt(GameCanvas.w);
 			message.writer().writeInt(GameCanvas.h);
@@ -851,7 +851,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 	}
 
@@ -872,7 +872,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 	}
 
@@ -986,7 +986,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		session.sendMessage(message);
 	}
@@ -1007,7 +1007,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		session.sendMessage(message);
 	}
@@ -1023,7 +1023,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1042,7 +1042,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1061,7 +1061,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1081,7 +1081,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1101,7 +1101,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1121,7 +1121,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1142,7 +1142,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1166,7 +1166,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1176,7 +1176,7 @@ public class Service
 
 	public void selectSkill(int skillTemplateId)
 	{
-		Cout.println(Char.myCharz().cName + " SELECT SKILL " + skillTemplateId);
+		//Cout.println(Char.myCharz().cName + " SELECT SKILL " + skillTemplateId);
 		Message message = null;
 		try
 		{
@@ -1186,7 +1186,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1205,7 +1205,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1223,7 +1223,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1233,7 +1233,7 @@ public class Service
 
 	public void confirmMenu(short npcID, sbyte select)
 	{
-		Res.outz("confirme menu" + select);
+		//Res.outz("confirme menu" + select);
 		Message message = null;
 		try
 		{
@@ -1244,7 +1244,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1263,7 +1263,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1273,7 +1273,7 @@ public class Service
 
 	public void menu(int npcId, int menuId, int optionId)
 	{
-		Cout.println("menuid: " + menuId);
+		//Cout.println("menuid: " + menuId);
 		Message message = null;
 		try
 		{
@@ -1285,7 +1285,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1304,7 +1304,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1324,7 +1324,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1343,7 +1343,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1361,7 +1361,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1380,7 +1380,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1408,7 +1408,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1434,7 +1434,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1453,7 +1453,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1471,7 +1471,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1489,7 +1489,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1524,19 +1524,35 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
 			message.cleanup();
 		}
 	}
-
-	public void sendPlayerAttack(MyVector vMob, MyVector vChar, int type)
+	public void sendPlayerAttack(Char c)
 	{
+        Message message = null;
 		try
 		{
-			Message message = null;
+            message = new Message(-60);
+            message.writer().writeInt(c.charID);
+            session.sendMessage(message);
+        }
+		catch
+		{
+		}
+		finally
+		{
+            message?.cleanup();
+        }
+    }
+    public void sendPlayerAttack(MyVector vMob, MyVector vChar, int type)
+    {
+        Message message = null;
+        try
+		{
 			if (type == 0)
 			{
 				return;
@@ -1603,6 +1619,10 @@ public class Service
 		catch (Exception)
 		{
 		}
+		finally
+		{
+			message?.cleanup();
+		}
 	}
 
 	public void pickItem(int itemMapId)
@@ -1616,7 +1636,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1635,7 +1655,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1653,7 +1673,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1671,7 +1691,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1690,7 +1710,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1717,7 +1737,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1744,7 +1764,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1816,7 +1836,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1835,7 +1855,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1854,7 +1874,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1873,7 +1893,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1892,7 +1912,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1911,7 +1931,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1930,7 +1950,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1949,7 +1969,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1970,7 +1990,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -1989,7 +2009,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2007,7 +2027,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2031,7 +2051,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2050,7 +2070,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2069,7 +2089,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2079,7 +2099,7 @@ public class Service
 
 	public void chatPlayer(string text, int id)
 	{
-		Res.outz("chat player text = " + text);
+		//Res.outz("chat player text = " + text);
 		Message message = null;
 		try
 		{
@@ -2090,7 +2110,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2109,7 +2129,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2129,7 +2149,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2149,7 +2169,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2170,7 +2190,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2180,7 +2200,7 @@ public class Service
 
 	public void loadRMS(string key)
 	{
-		Cout.println("REQUEST RMS");
+		//Cout.println("REQUEST RMS");
 		Message message = null;
 		try
 		{
@@ -2190,7 +2210,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2208,7 +2228,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2228,7 +2248,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2242,7 +2262,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("REQUEST ICON " + id);
+			////Res.outz("REQUEST ICON " + id);
 			message = new Message((sbyte)(-67));
 			message.writer().writeInt(id);
 			if (Session_ME2.gI().isConnected() && !Session_ME2.connecting)
@@ -2258,7 +2278,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2279,7 +2299,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2298,7 +2318,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2318,7 +2338,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2337,7 +2357,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2356,7 +2376,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2376,7 +2396,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2395,7 +2415,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2423,7 +2443,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2441,7 +2461,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2459,7 +2479,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2477,11 +2497,11 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
-			message.cleanup();
+			message?.cleanup();
 		}
 	}
 
@@ -2496,11 +2516,11 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
-			message.cleanup();
+			message?.cleanup();
 		}
 	}
 
@@ -2515,7 +2535,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2534,7 +2554,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2553,7 +2573,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2563,7 +2583,7 @@ public class Service
 
 	public void login2(string user)
 	{
-		Res.outz("Login 2");
+		////Res.outz("Login 2");
 		Message message = null;
 		try
 		{
@@ -2592,7 +2612,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2612,7 +2632,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2622,7 +2642,7 @@ public class Service
 
 	public void getResource(sbyte action, MyVector vResourceIndex)
 	{
-		Res.outz("request resource action= " + action);
+		////Res.outz("request resource action= " + action);
 		Message message = null;
 		try
 		{
@@ -2650,7 +2670,7 @@ public class Service
 		}
 		catch (Exception ex)
 		{
-			Cout.println(ex.Message + ex.StackTrace);
+			//Cout.println(ex.Message + ex.StackTrace);
 		}
 		finally
 		{
@@ -2660,7 +2680,7 @@ public class Service
 
 	public void requestMapSelect(int selected)
 	{
-		Res.outz("request magic tree");
+		//Res.outz("request magic tree");
 		Message message = null;
 		try
 		{
@@ -2716,7 +2736,7 @@ public class Service
 	public void enemy(sbyte b, int charID)
 	{
 		Message message = null;
-		Res.outz("add enemy");
+		//Res.outz("add enemy");
 		try
 		{
 			message = new Message((sbyte)(-99));
@@ -2741,7 +2761,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("ki gui action= " + action);
+			//Res.outz("ki gui action= " + action);
 			message = new Message((sbyte)(-100));
 			message.writer().writeByte(action);
 			if (action == 0)
@@ -2765,7 +2785,7 @@ public class Service
 			{
 				message.writer().writeByte(moneyType);
 				message.writer().writeByte(money);
-				Res.outz("currTab= " + moneyType + " page= " + money);
+				//Res.outz("currTab= " + moneyType + " page= " + money);
 			}
 			if (action == 5)
 			{
@@ -2789,7 +2809,7 @@ public class Service
 		{
 			message = new Message((sbyte)(-103));
 			message.writer().writeByte(action);
-			Res.outz("------------service--  " + action + "   " + flagType);
+			//Res.outz("------------service--  " + action + "   " + flagType);
 			if (action != 0)
 			{
 				message.writer().writeByte(flagType);
@@ -2810,7 +2830,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("------------setLockInventory:     " + pass);
+			//Res.outz("------------setLockInventory:     " + pass);
 			message = new Message((sbyte)(-104));
 			message.writer().writeInt(pass);
 			session.sendMessage(message);
@@ -2847,7 +2867,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("------------transportNow  ");
+			//Res.outz("------------transportNow  ");
 			message = new Message((sbyte)(-105));
 			session.sendMessage(message);
 		}
@@ -2865,7 +2885,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("FUNSION");
+			//Res.outz("FUNSION");
 			message = new Message((sbyte)125);
 			message.writer().writeByte(type);
 			session.sendMessage(message);
@@ -2885,14 +2905,14 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("IMAGE SOURCE size= " + vID.size());
+			//Res.outz("IMAGE SOURCE size= " + vID.size());
 			message = new Message((sbyte)(-111));
 			message.writer().writeShort(vID.size());
 			if (vID.size() > 0)
 			{
 				for (int i = 0; i < vID.size(); i++)
 				{
-					Res.outz("gui len str " + ((ImageSource)vID.elementAt(i)).id);
+					//Res.outz("gui len str " + ((ImageSource)vID.elementAt(i)).id);
 					message.writer().writeUTF(((ImageSource)vID.elementAt(i)).id);
 				}
 			}
@@ -2941,7 +2961,7 @@ public class Service
 		Message message = null;
 		try
 		{
-			Res.outz("SERVER DATA");
+			//Res.outz("SERVER DATA");
 			message = new Message((sbyte)(-110));
 			message.writer().writeByte(action);
 			if (action == 1)
@@ -3007,7 +3027,7 @@ public class Service
 
 	public void sendThachDau(int id)
 	{
-		Res.outz("GUI THACH DAU");
+		//Res.outz("GUI THACH DAU");
 		Message message = null;
 		try
 		{

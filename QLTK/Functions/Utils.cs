@@ -11,6 +11,11 @@ namespace QLTK.Functions
 {
     internal class Utils
     {
+        static long dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).Ticks;
+        public static long currentTimeMillis()
+        {
+            return (DateTime.UtcNow.Ticks - dateTime) / 10000;
+        }
         public static DialogResult notification(string text, MessageBoxIcon icon = MessageBoxIcon.Asterisk)
             => MessageBox.Show(text, "Thông báo!", MessageBoxButtons.OK, icon);
         public static DialogResult Question(string text, MessageBoxButtons btn = MessageBoxButtons.YesNo)

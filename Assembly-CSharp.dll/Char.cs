@@ -1655,21 +1655,21 @@ public class Char : IMapObject
 
 	public void soundUpdate()
 	{
-		if (me && statusMe == 10 && cf == 8 && ty > 20 && GameCanvas.gameTick % 20 == 0)
-		{
-			SoundMn.gI().charFly();
-		}
-		if (skillPaint != null && skillInfoPaint() != null && indexSkill < skillInfoPaint().Length && isPunchKickSkill() && (me || (!me && cx >= GameScr.cmx && cx <= GameScr.cmx + GameCanvas.w)) && GameCanvas.gameTick % 5 == 0)
-		{
-			if (cf == 9 || cf == 10 || cf == 11)
-			{
-				SoundMn.gI().charPunch(isKick: true, (!me) ? 0.05f : 0.1f);
-			}
-			else
-			{
-				SoundMn.gI().charPunch(isKick: false, (!me) ? 0.05f : 0.1f);
-			}
-		}
+		//if (me && statusMe == 10 && cf == 8 && ty > 20 && GameCanvas.gameTick % 20 == 0)
+		//{
+		//	SoundMn.gI().charFly();
+		//}
+		//if (skillPaint != null && skillInfoPaint() != null && indexSkill < skillInfoPaint().Length && isPunchKickSkill() && (me || (!me && cx >= GameScr.cmx && cx <= GameScr.cmx + GameCanvas.w)) && GameCanvas.gameTick % 5 == 0)
+		//{
+		//	if (cf == 9 || cf == 10 || cf == 11)
+		//	{
+		//		SoundMn.gI().charPunch(isKick: true, (!me) ? 0.05f : 0.1f);
+		//	}
+		//	else
+		//	{
+		//		SoundMn.gI().charPunch(isKick: false, (!me) ? 0.05f : 0.1f);
+		//	}
+		//}
 	}
 
 	public void updateChargeSkill()
@@ -1756,19 +1756,19 @@ public class Char : IMapObject
 		{
 			return;
 		}
-		if (sleepEff && GameCanvas.gameTick % 10 == 0)
-		{
-			EffecMn.addEff(new Effect(41, cx, cy, 3, 1, 1));
-		}
-		if (huytSao)
-		{
-			huytSao = false;
-			EffecMn.addEff(new Effect(39, cx, cy, 3, 3, 1));
-		}
-		if (blindEff && GameCanvas.gameTick % 5 == 0)
-		{
-			ServerEffect.addServerEffect(113, this, 1);
-		}
+		//if (sleepEff && GameCanvas.gameTick % 10 == 0)
+		//{
+		//	EffecMn.addEff(new Effect(41, cx, cy, 3, 1, 1));
+		//}
+		//if (huytSao)
+		//{
+		//	huytSao = false;
+		//	EffecMn.addEff(new Effect(39, cx, cy, 3, 3, 1));
+		//}
+		//if (blindEff && GameCanvas.gameTick % 5 == 0)
+		//{
+		//	ServerEffect.addServerEffect(113, this, 1);
+		//}
 		if (protectEff)
 		{
 			if (GameCanvas.gameTick % 5 == 0)
@@ -1790,15 +1790,15 @@ public class Char : IMapObject
 		{
 			tFusion++;
 		}
-		if (isNhapThe)
-		{
-			int num2 = 0;
-			if (GameCanvas.gameTick % 25 == 0)
-			{
-				num2 = 114;
-				ServerEffect.addServerEffect(num2, this, 1);
-			}
-		}
+		//if (isNhapThe)
+		//{
+		//	//int num2 = 0;
+		//	//if (GameCanvas.gameTick % 25 == 0)
+		//	//{
+		//	//	num2 = 114;
+		//	//	ServerEffect.addServerEffect(num2, this, 1);
+		//	//}
+		//}
 		if (isSetPos)
 		{
 			tpos++;
@@ -1820,11 +1820,11 @@ public class Char : IMapObject
 				}
 				currentMovePoint = null;
 				telePortSkill = false;
-				ServerEffect.addServerEffect(173, cx, cy, 1);
+				//ServerEffect.addServerEffect(173, cx, cy, 1);
 			}
 			else
 			{
-				ServerEffect.addServerEffect(60, cx, cy, 1);
+				//ServerEffect.addServerEffect(60, cx, cy, 1);
 			}
 			if ((TileMap.tileTypeAtPixel(cx, cy) & 2) == 2)
 			{
@@ -1836,17 +1836,17 @@ public class Char : IMapObject
 			}
 			return;
 		}
-		soundUpdate();
+		//soundUpdate();
 		if (stone)
 		{
 			return;
 		}
 		if (isFreez)
 		{
-			if (GameCanvas.gameTick % 5 == 0)
-			{
-				ServerEffect.addServerEffect(113, cx, cy, 1);
-			}
+			//if (GameCanvas.gameTick % 5 == 0)
+			//{
+			//	ServerEffect.addServerEffect(113, cx, cy, 1);
+			//}
 			cf = 23;
 			long num3 = mSystem.currentTimeMillis();
 			if (num3 - lastFreez >= 1000)
@@ -1882,14 +1882,14 @@ public class Char : IMapObject
 		{
 			isLockMove = true;
 			cf = 17;
-			if (GameCanvas.gameTick % 5 == 0)
-			{
-				ServerEffect.addServerEffect(154, cx, cy - 10, 2);
-			}
-			if (GameCanvas.gameTick % 5 == 0)
-			{
-				ServerEffect.addServerEffect(1, cx, cy + 10, 1);
-			}
+			//if (GameCanvas.gameTick % 5 == 0)
+			//{
+			//	ServerEffect.addServerEffect(154, cx, cy - 10, 2);
+			//}
+			//if (GameCanvas.gameTick % 5 == 0)
+			//{
+			//	ServerEffect.addServerEffect(1, cx, cy + 10, 1);
+			//}
 			chargeCount++;
 			if (chargeCount == 500)
 			{
@@ -1911,36 +1911,36 @@ public class Char : IMapObject
 			{
 				cf = 12;
 			}
-			if (cgender == 2)
-			{
-				if (GameCanvas.gameTick % 3 == 0)
-				{
-					ServerEffect.addServerEffect(154, cx, cy - ch / 2 + 10, 1);
-				}
-				if (GameCanvas.gameTick % 5 == 0)
-				{
-					ServerEffect.addServerEffect(114, cx + Res.random(-20, 20), cy + Res.random(-20, 20), 1);
-				}
-			}
-			if (cgender == 1)
-			{
-				if (GameCanvas.gameTick % 4 == 0)
-				{
-				}
-				if (GameCanvas.gameTick % 2 == 0)
-				{
-					if (cdir == 1)
-					{
-						ServerEffect.addServerEffect(70, cx - 18, cy - ch / 2 + 8, 1);
-						ServerEffect.addServerEffect(70, cx + 23, cy - ch / 2 + 15, 1);
-					}
-					else
-					{
-						ServerEffect.addServerEffect(70, cx + 18, cy - ch / 2 + 8, 1);
-						ServerEffect.addServerEffect(70, cx - 23, cy - ch / 2 + 15, 1);
-					}
-				}
-			}
+			//if (cgender == 2)
+			//{
+			//	//if (GameCanvas.gameTick % 3 == 0)
+			//	//{
+			//	//	ServerEffect.addServerEffect(154, cx, cy - ch / 2 + 10, 1);
+			//	//}
+			//	//if (GameCanvas.gameTick % 5 == 0)
+			//	//{
+			//	//	ServerEffect.addServerEffect(114, cx + Res.random(-20, 20), cy + Res.random(-20, 20), 1);
+			//	//}
+			//}
+			//if (cgender == 1)
+			//{
+			//	//if (GameCanvas.gameTick % 4 == 0)
+			//	//{
+			//	//}
+			//	if (GameCanvas.gameTick % 2 == 0)
+			//	{
+			//		if (cdir == 1)
+			//		{
+			//			ServerEffect.addServerEffect(70, cx - 18, cy - ch / 2 + 8, 1);
+			//			ServerEffect.addServerEffect(70, cx + 23, cy - ch / 2 + 15, 1);
+			//		}
+			//		else
+			//		{
+			//			ServerEffect.addServerEffect(70, cx + 18, cy - ch / 2 + 8, 1);
+			//			ServerEffect.addServerEffect(70, cx - 23, cy - ch / 2 + 15, 1);
+			//		}
+			//	}
+			//}
 			cur = mSystem.currentTimeMillis();
 			if (cur - last > seconds || cur - last > 10000)
 			{
@@ -1955,7 +1955,7 @@ public class Char : IMapObject
 					}
 					if (cgender == 1)
 					{
-						Res.outz("set skipp paint");
+						////Res.outz("set skipp paint");
 						isCreateDark = true;
 						myCharz().setSkillPaint(GameScr.sks[myCharz().myskill.skillId], flag ? 1 : 0);
 					}
@@ -2008,10 +2008,10 @@ public class Char : IMapObject
 					return;
 				}
 				cf = 32;
-				if (cgender == 0 && GameCanvas.gameTick % 3 == 0)
-				{
-					ServerEffect.addServerEffect(153, cx, cy - ch, 2);
-				}
+				//if (cgender == 0 && GameCanvas.gameTick % 3 == 0)
+				//{
+				//	ServerEffect.addServerEffect(153, cx, cy - ch, 2);
+				//}
 				chargeCount++;
 				if (chargeCount == 500)
 				{
@@ -2094,14 +2094,7 @@ public class Char : IMapObject
 			dart.update();
 		}
 		updateEffect();
-		if (holdEffID != 0)
-		{
-			if (GameCanvas.gameTick % 5 == 0)
-			{
-				EffecMn.addEff(new Effect(32, cx, cy + 24, 3, 5, 1));
-			}
-		}
-		else
+		if (holdEffID == 0)
 		{
 			if (blindEff || sleepEff)
 			{
@@ -2275,7 +2268,7 @@ public class Char : IMapObject
 								}
 								else
 								{
-									SoundMn.gI().charJump();
+									//SoundMn.gI().charJump();
 									cx = currentMovePoint.xEnd;
 									statusMe = 10;
 									cvy = -5;
@@ -2645,7 +2638,7 @@ public class Char : IMapObject
 				if (moveFast[0] == 0)
 				{
 					moveFast[0]++;
-					ServerEffect.addServerEffect(60, this, 1);
+				//	ServerEffect.addServerEffect(60, this, 1);
 				}
 				else if (moveFast[0] < 10)
 				{
@@ -2656,7 +2649,7 @@ public class Char : IMapObject
 					cx = moveFast[1];
 					cy = moveFast[2];
 					moveFast = null;
-					ServerEffect.addServerEffect(60, this, 1);
+					//ServerEffect.addServerEffect(60, this, 1);
 					if (me)
 					{
 						if ((TileMap.tileTypeAtPixel(cx, cy) & 2) != 2)
@@ -2679,27 +2672,27 @@ public class Char : IMapObject
 			if (isCharge)
 			{
 				cf = 17;
-				if (GameCanvas.gameTick % 4 == 0)
-				{
-					ServerEffect.addServerEffect(1, cx, cy + GameCanvas.transY, 1);
-				}
+				//if (GameCanvas.gameTick % 4 == 0)
+				//{
+				//	ServerEffect.addServerEffect(1, cx, cy + GameCanvas.transY, 1);
+				//}
 				if (me)
 				{
 					long num6 = mSystem.currentTimeMillis();
 					if (num6 - last >= 1000)
 					{
-						Res.outz("%= " + myskill.damage);
+						//Res.outz("%= " + myskill.damage);
 						last = num6;
 						cHP += cHPFull * myskill.damage / 100;
 						cMP += cMPFull * myskill.damage / 100;
-						if (cHP < cHPFull)
-						{
-							GameScr.startFlyText("+" + cHPFull * myskill.damage / 100 + " " + mResources.HP, cx, cy - ch - 20, 0, -1, mFont.HP);
-						}
-						if (cMP < cMPFull)
-						{
-							GameScr.startFlyText("+" + cMPFull * myskill.damage / 100 + " " + mResources.KI, cx, cy - ch - 20, 0, -2, mFont.MP);
-						}
+						//if (cHP < cHPFull)
+						//{
+						//	GameScr.startFlyText("+" + cHPFull * myskill.damage / 100 + " " + mResources.HP, cx, cy - ch - 20, 0, -1, mFont.HP);
+						//}
+						//if (cMP < cMPFull)
+						//{
+						//	GameScr.startFlyText("+" + cMPFull * myskill.damage / 100 + " " + mResources.KI, cx, cy - ch - 20, 0, -2, mFont.MP);
+						//}
 						Service.gI().skill_not_focus(2);
 					}
 				}
@@ -2920,7 +2913,7 @@ public class Char : IMapObject
 				cp3 = 0;
 			}
 			indexSkill = 0;
-			Res.outz("remove 2");
+			//Res.outz("remove 2");
 			skillPaint = null;
 			skillPaintRandomPaint = null;
 			eff0 = (eff1 = (eff2 = null));
@@ -2991,25 +2984,25 @@ public class Char : IMapObject
 						}
 					}
 					dart = new PlayerDart(this, arrowId - 100, skillPaintRandomPaint, cx + (array2[num].adx - 10) * cdir, cy + array2[num].ady + num2);
-					if (myskill != null)
-					{
-						if (myskill.template.id == 1)
-						{
-							SoundMn.gI().traidatKame();
-						}
-						else if (myskill.template.id == 3)
-						{
-							SoundMn.gI().namekKame();
-						}
-						else if (myskill.template.id == 5)
-						{
-							SoundMn.gI().xaydaKame();
-						}
-						else if (myskill.template.id == 11)
-						{
-							SoundMn.gI().nameLazer();
-						}
-					}
+					//if (myskill != null)
+					//{
+						//if (myskill.template.id == 1)
+						//{
+						//	SoundMn.gI().traidatKame();
+						//}
+						//else if (myskill.template.id == 3)
+						//{
+						//	SoundMn.gI().namekKame();
+						//}
+						//else if (myskill.template.id == 5)
+						//{
+						//	SoundMn.gI().xaydaKame();
+						//}
+						//else if (myskill.template.id == 11)
+						//{
+						//	SoundMn.gI().nameLazer();
+						//}
+					//}
 				}
 				else if (isFlyAndCharge || isUseSkillAfterCharge)
 				{
@@ -3018,7 +3011,7 @@ public class Char : IMapObject
 			}
 			else
 			{
-				Res.outz("g");
+				//Res.outz("g");
 				arr = new Arrow(this, GameScr.arrs[arrowId - 1]);
 				arr.life = 10;
 				arr.ax = cx + array2[num].adx;
@@ -3101,7 +3094,7 @@ public class Char : IMapObject
 		if (isCharge)
 		{
 			isCharge = false;
-			SoundMn.gI().taitaoPause();
+			//SoundMn.gI().taitaoPause();
 			Service.gI().skill_not_focus(3);
 		}
 		cp1++;
@@ -3243,7 +3236,7 @@ public class Char : IMapObject
 		if (isCharge)
 		{
 			isCharge = false;
-			SoundMn.gI().taitaoPause();
+			//SoundMn.gI().taitaoPause();
 			Service.gI().skill_not_focus(3);
 		}
 		cx += cvx * cdir;
@@ -3327,13 +3320,13 @@ public class Char : IMapObject
 	public void hide()
 	{
 		isHide = true;
-		EffecMn.addEff(new Effect(107, cx, cy + 25, 3, 15, 1));
+		//EffecMn.addEff(new Effect(107, cx, cy + 25, 3, 15, 1));
 	}
 
 	public void show()
 	{
 		isHide = false;
-		EffecMn.addEff(new Effect(107, cx, cy + 25, 3, 10, 1));
+		//EffecMn.addEff(new Effect(107, cx, cy + 25, 3, 10, 1));
 	}
 
 	public int getVy(int size, int dx, int dy)
@@ -3503,12 +3496,12 @@ public class Char : IMapObject
 		{
 			return;
 		}
-		if (clevel >= 9 && !GameCanvas.lowGraphic && (ty == 40 || ty == 50))
-		{
-			GameCanvas.gI().startDust(-1, cx - -8, cy);
-			GameCanvas.gI().startDust(1, cx - 8, cy);
-			addDustEff(1);
-		}
+		//if (clevel >= 9 && !GameCanvas.lowGraphic && (ty == 40 || ty == 50))
+		//{
+		//	GameCanvas.gI().startDust(-1, cx - -8, cy);
+		//	GameCanvas.gI().startDust(1, cx - 8, cy);
+		//	addDustEff(1);
+		//}
 		if (ty <= 50 || clevel < 9)
 		{
 			return;
@@ -3572,23 +3565,23 @@ public class Char : IMapObject
 	public void updateCharRun()
 	{
 		int num = ((isMonkey != 1 || me) ? 1 : 2);
-		if (cx >= GameScr.cmx && cx <= GameScr.cmx + GameCanvas.w)
-		{
-			if (isMonkey == 0)
-			{
-				SoundMn.gI().charRun(getSoundVolumn());
-			}
-			else
-			{
-				SoundMn.gI().monkeyRun(getSoundVolumn());
-			}
-		}
+		//if (cx >= GameScr.cmx && cx <= GameScr.cmx + GameCanvas.w)
+		//{
+		//	if (isMonkey == 0)
+		//	{
+		//		SoundMn.gI().charRun(getSoundVolumn());
+		//	}
+		//	else
+		//	{
+		//		SoundMn.gI().monkeyRun(getSoundVolumn());
+		//	}
+		//}
 		ty = 0;
 		isFreez = false;
 		if (isCharge)
 		{
 			isCharge = false;
-			SoundMn.gI().taitaoPause();
+			//SoundMn.gI().taitaoPause();
 			Service.gI().skill_not_focus(3);
 		}
 		int num2 = 0;
@@ -3687,7 +3680,7 @@ public class Char : IMapObject
 		}
 		GameCanvas.gI().startDust(cdir, cx - (cdir << 3), cy);
 		updateCharInBridge();
-		addDustEff(2);
+		//addDustEff(2);
 	}
 
 	private void stop()
@@ -3712,10 +3705,10 @@ public class Char : IMapObject
 		if (isCharge)
 		{
 			isCharge = false;
-			SoundMn.gI().taitaoPause();
+			//SoundMn.gI().taitaoPause();
 			Service.gI().skill_not_focus(3);
 		}
-		addDustEff(3);
+		//addDustEff(3);
 		cx += cvx;
 		cy += cvy;
 		if (cy < 0)
@@ -3867,10 +3860,10 @@ public class Char : IMapObject
 		if (cy + 4 >= TileMap.pxh)
 		{
 			statusMe = 1;
-			if (me)
-			{
-				SoundMn.gI().charFall();
-			}
+			//if (me)
+			//{
+			//	SoundMn.gI().charFall();
+			//}
 			cvx = (cvy = 0);
 			cp3 = 0;
 			return;
@@ -3898,7 +3891,7 @@ public class Char : IMapObject
 			cf = 0;
 			GameCanvas.gI().startDust(-1, cx - -8, cy);
 			GameCanvas.gI().startDust(1, cx - 8, cy);
-			addDustEff(1);
+			//addDustEff(1);
 		}
 		if (delayFall > 0)
 		{
@@ -3983,14 +3976,14 @@ public class Char : IMapObject
 				cp1 = (cp2 = 0);
 				cy = TileMap.tileXofPixel(cy + 3);
 				statusMe = 1;
-				if (me)
-				{
-					SoundMn.gI().charFall();
-				}
+				//if (me)
+				//{
+				//	SoundMn.gI().charFall();
+				//}
 				cp3 = 0;
 				GameCanvas.gI().startDust(-1, cx - -8, cy);
 				GameCanvas.gI().startDust(1, cx - 8, cy);
-				addDustEff(1);
+				//addDustEff(1);
 				if (cy - cySend > 0)
 				{
 					if (me)
@@ -4010,16 +4003,16 @@ public class Char : IMapObject
 				cf = 0;
 				GameCanvas.gI().startDust(-1, cx - -8, cy);
 				GameCanvas.gI().startDust(1, cx - 8, cy);
-				addDustEff(1);
+				//addDustEff(1);
 			}
 			return;
 		}
 		cf = 12;
 		if (me)
 		{
-			if (!isAttack)
-			{
-			}
+			//if (!isAttack)
+			//{
+			//}
 			return;
 		}
 		if ((TileMap.tileTypeAtPixel(cx, cy + 1) & 2) == 2)
@@ -4150,10 +4143,10 @@ public class Char : IMapObject
 			if (ty > 20)
 			{
 				delayFall = 10;
-				if (GameCanvas.gameTick % 3 == 0)
-				{
-					ServerEffect.addServerEffect(111, cx + ((cdir != 1) ? 27 : (-17)), cy + fy + 13, 1, (cdir != 1) ? 2 : 0);
-				}
+				//if (GameCanvas.gameTick % 3 == 0)
+				//{
+				//	ServerEffect.addServerEffect(111, cx + ((cdir != 1) ? 27 : (-17)), cy + fy + 13, 1, (cdir != 1) ? 2 : 0);
+				//}
 			}
 		}
 		if (!me)
@@ -4184,7 +4177,7 @@ public class Char : IMapObject
 			cvx = (cvy = 0);
 			cp1 = (cp2 = 0);
 			statusMe = 4;
-			addDustEff(3);
+			//addDustEff(3);
 		}
 		if (abs(cx - cxSend) > 96 || abs(cy - cySend) > 24)
 		{
@@ -4768,7 +4761,7 @@ public class Char : IMapObject
 				return;
 			}
 		}
-		Res.outz("skill id= " + skillPaint.id);
+		//Res.outz("skill id= " + skillPaint.id);
 		if ((me && dart != null) || TileMap.isOfflineMap())
 		{
 			return;
@@ -4808,21 +4801,21 @@ public class Char : IMapObject
 		}
 		if (me)
 		{
-			if (myskill.template.id == 7)
-			{
-				SoundMn.gI().hoisinh();
-			}
+			//if (myskill.template.id == 7)
+			//{
+			//	SoundMn.gI().hoisinh();
+			//}
 			if (myskill.template.id == 6)
 			{
 				Service.gI().skill_not_focus(0);
 				GameScr.gI().isUseFreez = true;
-				SoundMn.gI().thaiduonghasan();
+				//SoundMn.gI().thaiduonghasan();
 			}
-			if (myskill.template.id == 8)
+			else if (myskill.template.id == 8)
 			{
 				if (!isCharge)
 				{
-					SoundMn.gI().taitaoPause();
+					//SoundMn.gI().taitaoPause();
 					Service.gI().skill_not_focus(1);
 					isCharge = true;
 					last = (cur = mSystem.currentTimeMillis());
@@ -4831,10 +4824,10 @@ public class Char : IMapObject
 				{
 					Service.gI().skill_not_focus(3);
 					isCharge = false;
-					SoundMn.gI().taitaoPause();
+					//SoundMn.gI().taitaoPause();
 				}
 			}
-			if (myskill.template.id == 13)
+            else if (myskill.template.id == 13)
 			{
 				if (isMonkey != 0)
 				{
@@ -4842,29 +4835,29 @@ public class Char : IMapObject
 				}
 				else if (!isCreateDark)
 				{
-					SoundMn.gI().gong();
+					//SoundMn.gI().gong();
 					Service.gI().skill_not_focus(6);
 					chargeCount = 0;
 					isWaitMonkey = true;
 				}
 				return;
 			}
-			if (myskill.template.id == 14)
+            else if (myskill.template.id == 14)
 			{
-				SoundMn.gI().gong();
+				//SoundMn.gI().gong();
 				Service.gI().skill_not_focus(7);
 				useChargeSkill(isGround: true);
 			}
-			if (myskill.template.id == 21)
+            else if (myskill.template.id == 21)
 			{
 				Service.gI().skill_not_focus(10);
 				return;
 			}
-			if (myskill.template.id == 12)
+            else if (myskill.template.id == 12)
 			{
 				Service.gI().skill_not_focus(8);
 			}
-			if (myskill.template.id == 19)
+            else if (myskill.template.id == 19)
 			{
 				Service.gI().skill_not_focus(9);
 				return;
@@ -4889,13 +4882,13 @@ public class Char : IMapObject
 				cy = mobFocus.y;
 				currentMovePoint = null;
 			}
-			ServerEffect.addServerEffect(60, cx, cy, 1);
+			//ServerEffect.addServerEffect(60, cx, cy, 1);
 			telePortSkill = true;
 		}
 		if (skillPaint.id >= 107 && skillPaint.id <= 113)
 		{
 			skillPaint = GameScr.sks[skillPaint.id - 44];
-			EffecMn.addEff(new Effect(23, cx, cy + ch / 2, 3, 2, 1));
+			//EffecMn.addEff(new Effect(23, cx, cy + ch / 2, 3, 2, 1));
 		}
 		setAutoSkillPaint(skillPaint, sType);
 	}
@@ -4967,10 +4960,10 @@ public class Char : IMapObject
 					Service.gI().skill_not_focus(4);
 				}
 			}
-			if (cgender == 1)
-			{
-				SoundMn.gI().gongName();
-			}
+			//if (cgender == 1)
+			//{
+			//	SoundMn.gI().gongName();
+			//}
 			isStandAndCharge = true;
 		}
 		else if (!isFlyAndCharge)
@@ -4993,7 +4986,7 @@ public class Char : IMapObject
 	public void setAutoSkillPaint(SkillPaint skillPaint, int sType)
 	{
 		this.skillPaint = skillPaint;
-		Res.outz("set auto skill " + ((skillPaint == null) ? "null" : "!null"));
+		//Res.outz("set auto skill " + ((skillPaint == null) ? "null" : "!null"));
 		if (skillPaint.id >= 0 && skillPaint.id <= 6)
 		{
 			int num = Res.random(0, skillPaint.id + 4) - 1;
@@ -5429,7 +5422,7 @@ public class Char : IMapObject
 				{
 					GameCanvas.gI().startDust(-1, cx - -8, cy);
 					GameCanvas.gI().startDust(1, cx - 8, cy);
-					addDustEff(1);
+					//addDustEff(1);
 				}
 			}
 			if (clevel == 14)
@@ -5797,7 +5790,7 @@ public class Char : IMapObject
 		}
 		if (statusMe == 10)
 		{
-			Res.outz("cf= " + cf);
+			//Res.outz("cf= " + cf);
 			if (cf == 8)
 			{
 				num = 0;
@@ -6616,7 +6609,7 @@ public class Char : IMapObject
 
 	public void findNextFocusByKey()
 	{
-		Res.outz("focus size= " + focus.size());
+		//Res.outz("focus size= " + focus.size());
 		if ((myCharz().skillPaint != null || myCharz().arr != null || myCharz().dart != null || myCharz().skillInfoPaint() != null) && focus.size() == 0)
 		{
 			return;
@@ -6641,17 +6634,17 @@ public class Char : IMapObject
 		}
 		if (me && isAttacPlayerStatus())
 		{
-			Res.outz("co the tan cong nguoi");
+			//Res.outz("co the tan cong nguoi");
 			for (int j = 0; j < GameScr.vMob.size(); j++)
 			{
 				Mob mob = (Mob)GameScr.vMob.elementAt(j);
 				if (!GameScr.gI().isMeCanAttackMob(mob))
 				{
-					Res.outz("khong the tan cong quai");
+					//Res.outz("khong the tan cong quai");
 					mobFocus = null;
 					continue;
 				}
-				Res.outz("co the tan ong quai");
+				//Res.outz("co the tan ong quai");
 				focus.addElement(mob);
 				if (mobFocus != null)
 				{
@@ -6838,7 +6831,7 @@ public class Char : IMapObject
 	{
 		this.isCrit = isCrit;
 		this.isMob = isMob;
-		Res.outz("CHP= " + cHP + " dame -= " + HPShow + " HP FULL= " + cHPFull);
+		//Res.outz("CHP= " + cHP + " dame -= " + HPShow + " HP FULL= " + cHPFull);
 		cHP -= HPShow;
 		cMP -= MPShow;
 		GameScr.gI().isInjureHp = true;
@@ -6853,29 +6846,29 @@ public class Char : IMapObject
 		{
 			cMP = 0;
 		}
-		if (isMob || (!isMob && cTypePk != 4 && damMP != -100))
-		{
-			if (HPShow <= 0)
-			{
-				if (me)
-				{
-					GameScr.startFlyText(mResources.miss, cx, cy - ch, 0, -2, mFont.MISS_ME);
-				}
-				else
-				{
-					GameScr.startFlyText(mResources.miss, cx, cy - ch, 0, -2, mFont.MISS);
-				}
-			}
-			else
-			{
-				GameScr.startFlyText("-" + HPShow, cx, cy - ch, 0, -2, isCrit ? mFont.FATAL : mFont.RED);
-			}
-		}
+		//if (isMob || (!isMob && cTypePk != 4 && damMP != -100))
+		//{
+		//	if (HPShow <= 0)
+		//	{
+		//		if (me)
+		//		{
+		//			GameScr.startFlyText(mResources.miss, cx, cy - ch, 0, -2, mFont.MISS_ME);
+		//		}
+		//		else
+		//		{
+		//			GameScr.startFlyText(mResources.miss, cx, cy - ch, 0, -2, mFont.MISS);
+		//		}
+		//	}
+		//	else
+		//	{
+		//		GameScr.startFlyText("-" + HPShow, cx, cy - ch, 0, -2, isCrit ? mFont.FATAL : mFont.RED);
+		//	}
+		//}
 		if (HPShow > 0)
 		{
 			isInjure = 6;
 		}
-		ServerEffect.addServerEffect(80, this, 1);
+		//ServerEffect.addServerEffect(80, this, 1);
 		if (isDie)
 		{
 			isDie = false;
@@ -7072,37 +7065,37 @@ public class Char : IMapObject
 		return mobFocus != null || (charFocus != null && isMeCanAttackOtherPlayer(charFocus));
 	}
 
-	public void addDustEff(int type)
-	{
-		if (GameCanvas.lowGraphic)
-		{
-			return;
-		}
-		switch (type)
-		{
-		case 1:
-			if (clevel >= 9)
-			{
-				Effect effect3 = new Effect(19, cx - 5, cy + 20, 2, 1, -1);
-				EffecMn.addEff(effect3);
-			}
-			break;
-		case 2:
-			if ((!me || isMonkey != 1) && isNhapThe && GameCanvas.gameTick % 5 == 0)
-			{
-				Effect effect2 = new Effect(22, cx - 5, cy + 35, 2, 1, -1);
-				EffecMn.addEff(effect2);
-			}
-			break;
-		case 3:
-			if (clevel >= 9 && ySd - cy <= 5)
-			{
-				Effect effect = new Effect(19, cx - 5, ySd + 20, 2, 1, -1);
-				EffecMn.addEff(effect);
-			}
-			break;
-		}
-	}
+	//public void addDustEff(int type)
+	//{
+	//	if (GameCanvas.lowGraphic)
+	//	{
+	//		return;
+	//	}
+	//	switch (type)
+	//	{
+	//	case 1:
+	//		if (clevel >= 9)
+	//		{
+	//			Effect effect3 = new Effect(19, cx - 5, cy + 20, 2, 1, -1);
+	//			EffecMn.addEff(effect3);
+	//		}
+	//		break;
+	//	case 2:
+	//		if ((!me || isMonkey != 1) && isNhapThe && GameCanvas.gameTick % 5 == 0)
+	//		{
+	//			Effect effect2 = new Effect(22, cx - 5, cy + 35, 2, 1, -1);
+	//			EffecMn.addEff(effect2);
+	//		}
+	//		break;
+	//	case 3:
+	//		if (clevel >= 9 && ySd - cy <= 5)
+	//		{
+	//			Effect effect = new Effect(19, cx - 5, ySd + 20, 2, 1, -1);
+	//			EffecMn.addEff(effect);
+	//		}
+	//		break;
+	//	}
+	//}
 
 	public bool isGetFlagImage(sbyte getFlag)
 	{
@@ -7226,12 +7219,12 @@ public class Char : IMapObject
 			{
 				Service.gI().funsion(fusion);
 			}
-			EffecMn.addEff(new Effect(34, cx, cy + 12, 2, 1, -1));
+			//EffecMn.addEff(new Effect(34, cx, cy + 12, 2, 1, -1));
 		}
-		if (fusion == 6)
-		{
-			EffecMn.addEff(new Effect(38, cx, cy + 12, 2, 1, -1));
-		}
+		//if (fusion == 6)
+		//{
+		//	EffecMn.addEff(new Effect(38, cx, cy + 12, 2, 1, -1));
+		//}
 		if (me)
 		{
 			GameCanvas.panel.hideNow();
@@ -7513,7 +7506,7 @@ public class Char : IMapObject
 				{
 					GameCanvas.gI().startDust(-1, cx - -8, cy);
 					GameCanvas.gI().startDust(1, cx - 8, cy);
-					addDustEff(1);
+					//addDustEff(1);
 				}
 				if (mSystem.currentTimeMillis() - timeBlue > 0)
 				{

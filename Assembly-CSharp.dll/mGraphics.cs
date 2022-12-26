@@ -1104,7 +1104,7 @@ public class mGraphics
 		image.texture.SetPixels(pixels);
 		Image.setTextureQuality(image.texture);
 		image.texture.Apply();
-		Cout.LogError2("BLEND ----------------------------------------------------");
+		//Cout.LogError2("BLEND ----------------------------------------------------");
 		return image;
 	}
 

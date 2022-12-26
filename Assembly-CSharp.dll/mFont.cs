@@ -670,7 +670,7 @@ public class mFont
 		}
 		catch (Exception ex)
 		{
-			Cout.LogWarning("EXCEPTION WHEN REAL SPLIT " + src + "\nend=" + num + "\n" + ex.Message + "\n" + ex.StackTrace);
+			//Cout.LogWarning("EXCEPTION WHEN REAL SPLIT " + src + "\nend=" + num + "\n" + ex.Message + "\n" + ex.StackTrace);
 			arrayList.Add(src);
 			return arrayList;
 		}
@@ -728,7 +728,7 @@ public class mFont
 		}
 		catch (Exception ex)
 		{
-			Cout.LogError("GET WIDTH OF " + s + " FAIL.\n" + ex.Message + "\n" + ex.StackTrace);
+			//Cout.LogError("GET WIDTH OF " + s + " FAIL.\n" + ex.Message + "\n" + ex.StackTrace);
 			return getWidthNotExactOf(s);
 		}
 	}
@@ -756,7 +756,7 @@ public class mFont
 		}
 		catch (Exception ex)
 		{
-			Cout.LogError("FAIL GET HEIGHT " + ex.StackTrace);
+			//Cout.LogError("FAIL GET HEIGHT " + ex.StackTrace);
 			height = 20;
 		}
 		return height / mGraphics.zoomLevel;

@@ -37,14 +37,7 @@ public class Session_ME2 : ISession
 							sendingMessage.RemoveAt(0);
 						}
 					}
-					try
-					{
-						Thread.Sleep(5);
-					}
-					catch (Exception ex)
-					{
-						Cout.LogError(ex.ToString());
-					}
+					Thread.Sleep(10);
 				}
 				catch (Exception)
 				{
@@ -82,14 +75,7 @@ public class Session_ME2 : ISession
 					{
 						Cout.println("LOI NHAN  MESS THU 1");
 					}
-					try
-					{
-						Thread.Sleep(5);
-					}
-					catch (Exception)
-					{
-						Cout.println("LOI NHAN  MESS THU 2");
-					}
+					Thread.Sleep(5);
 				}
 			}
 			catch (Exception ex3)
@@ -314,7 +300,7 @@ public class Session_ME2 : ISession
 			Debug.Log("connecting...!");
 			Debug.Log("host: " + host);
 			Debug.Log("port: " + port);
-			initThread = new Thread(NetworkInit);
+			initThread = new Thread(NetworkInit) { IsBackground = true };
 			initThread.Start();
 		}
 	}
@@ -347,10 +333,10 @@ public class Session_ME2 : ISession
 		dataStream = sc.GetStream();
 		dis = new BinaryReader(dataStream, new UTF8Encoding());
 		dos = new BinaryWriter(dataStream, new UTF8Encoding());
-		new Thread(sender.run).Start();
+		new Thread(sender.run) { IsBackground = true }.Start();
 		MessageCollector @object = new MessageCollector();
 		Cout.LogError("new -----");
-		collectorThread = new Thread(@object.run);
+		collectorThread = new Thread(@object.run) { IsBackground = true };
 		collectorThread.Start();
 		timeConnected = currentTimeMillis();
 		connecting = false;

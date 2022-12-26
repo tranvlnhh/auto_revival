@@ -146,10 +146,10 @@ public class PlayerDart
 
 	private void endMe()
 	{
-		if (!charBelong.isUseSkillAfterCharge && x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
-		{
-			SoundMn.gI().explode_1();
-		}
+		//if (!charBelong.isUseSkillAfterCharge && x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
+		//{
+		//	SoundMn.gI().explode_1();
+		//}
 		charBelong.setAttack();
 		if (charBelong.me)
 		{

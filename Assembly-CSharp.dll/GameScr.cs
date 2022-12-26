@@ -966,28 +966,28 @@ public class GameScr : mScreen, IChatable
 		imgHPLost = GameCanvas.loadImage("/mainImage/myTexture2dhpLost.png");
 		imgMPLost = GameCanvas.loadImage("/mainImage/myTexture2dmpLost.png");
 		imgMP = GameCanvas.loadImage("/mainImage/myTexture2dMP.png");
-		imgSkill = GameCanvas.loadImage("/mainImage/myTexture2dskill.png");
-		imgSkill2 = GameCanvas.loadImage("/mainImage/myTexture2dskill2.png");
+		//imgSkill = GameCanvas.loadImage("/mainImage/myTexture2dskill.png");
+		//imgSkill2 = GameCanvas.loadImage("/mainImage/myTexture2dskill2.png");
 		imgMenu = GameCanvas.loadImage("/mainImage/myTexture2dmenu.png");
 		imgFocus = GameCanvas.loadImage("/mainImage/myTexture2dfocus.png");
-		imgChatPC = GameCanvas.loadImage("/pc/chat.png");
-		imgChatsPC2 = GameCanvas.loadImage("/pc/chat2.png");
-		if (GameCanvas.isTouch)
-		{
-			imgArrow = GameCanvas.loadImage("/mainImage/myTexture2darrow.png");
-			imgArrow2 = GameCanvas.loadImage("/mainImage/myTexture2darrow2.png");
-			imgChat = GameCanvas.loadImage("/mainImage/myTexture2dchat.png");
-			imgChat2 = GameCanvas.loadImage("/mainImage/myTexture2dchat2.png");
-			imgFocus2 = GameCanvas.loadImage("/mainImage/myTexture2dfocus2.png");
-			imgHP1 = GameCanvas.loadImage("/mainImage/myTexture2dPea0.png");
-			imgHP2 = GameCanvas.loadImage("/mainImage/myTexture2dPea1.png");
-			imgAnalog1 = GameCanvas.loadImage("/mainImage/myTexture2danalog1.png");
-			imgAnalog2 = GameCanvas.loadImage("/mainImage/myTexture2danalog2.png");
-			imgHP3 = GameCanvas.loadImage("/mainImage/myTexture2dPea2.png");
-			imgHP4 = GameCanvas.loadImage("/mainImage/myTexture2dPea3.png");
-			imgFire0 = GameCanvas.loadImage("/mainImage/myTexture2dfirebtn0.png");
-			imgFire1 = GameCanvas.loadImage("/mainImage/myTexture2dfirebtn1.png");
-		}
+		//imgChatPC = GameCanvas.loadImage("/pc/chat.png");
+		//imgChatsPC2 = GameCanvas.loadImage("/pc/chat2.png");
+		//if (GameCanvas.isTouch)
+		//{
+		//	imgArrow = GameCanvas.loadImage("/mainImage/myTexture2darrow.png");
+		//	imgArrow2 = GameCanvas.loadImage("/mainImage/myTexture2darrow2.png");
+		//	imgChat = GameCanvas.loadImage("/mainImage/myTexture2dchat.png");
+		//	imgChat2 = GameCanvas.loadImage("/mainImage/myTexture2dchat2.png");
+		//	imgFocus2 = GameCanvas.loadImage("/mainImage/myTexture2dfocus2.png");
+		//	imgHP1 = GameCanvas.loadImage("/mainImage/myTexture2dPea0.png");
+		//	imgHP2 = GameCanvas.loadImage("/mainImage/myTexture2dPea1.png");
+		//	imgAnalog1 = GameCanvas.loadImage("/mainImage/myTexture2danalog1.png");
+		//	imgAnalog2 = GameCanvas.loadImage("/mainImage/myTexture2danalog2.png");
+		//	imgHP3 = GameCanvas.loadImage("/mainImage/myTexture2dPea2.png");
+		//	imgHP4 = GameCanvas.loadImage("/mainImage/myTexture2dPea3.png");
+		//	imgFire0 = GameCanvas.loadImage("/mainImage/myTexture2dfirebtn0.png");
+		//	imgFire1 = GameCanvas.loadImage("/mainImage/myTexture2dfirebtn1.png");
+		//}
 		flyTextX = new int[5];
 		flyTextY = new int[5];
 		flyTextDx = new int[5];
@@ -1092,10 +1092,10 @@ public class GameScr : mScreen, IChatable
 	{
 		vChatVip.removeAllElements();
 		ServerListScreen.isWait = false;
-		if (BackgroudEffect.isHaveRain())
-		{
-			SoundMn.gI().rain();
-		}
+		//if (BackgroudEffect.isHaveRain())
+		//{
+		//	SoundMn.gI().rain();
+		//}
 		LoginScr.isContinueToLogin = false;
 		Char.isLoadingMap = false;
 		if (!isPaintOther)
@@ -3650,13 +3650,13 @@ public class GameScr : mScreen, IChatable
 		{
 			if (!Char.myCharz().doUsePotion())
 			{
-				info1.addInfo(mResources.HP_EMPTY, 0);
+				//info1.addInfo(mResources.HP_EMPTY, 0);
 				return;
 			}
-			ServerEffect.addServerEffect(11, Char.myCharz(), 5);
-			ServerEffect.addServerEffect(104, Char.myCharz(), 4);
+			//ServerEffect.addServerEffect(11, Char.myCharz(), 5);
+			//ServerEffect.addServerEffect(104, Char.myCharz(), 4);
 			lastUsePotion = num;
-			SoundMn.gI().eatPeans();
+			//SoundMn.gI().eatPeans();
 		}
 	}
 
@@ -3664,7 +3664,7 @@ public class GameScr : mScreen, IChatable
 	{
 		if (!isSuperPower)
 		{
-			SoundMn.gI().bigeExlode();
+			//SoundMn.gI().bigeExlode();
 			isSuperPower = true;
 			tPower = 0;
 			dxPower = 0;
@@ -3678,11 +3678,11 @@ public class GameScr : mScreen, IChatable
 		activeRongThan = true;
 		isUseFreez = true;
 		isMeCallRongThan = true;
-		if (isMe)
-		{
-			Effect me = new Effect(20, Char.myCharz().cx, Char.myCharz().cy - 77, 2, 8, 1);
-			EffecMn.addEff(me);
-		}
+		//if (isMe)
+		//{
+		//	Effect me = new Effect(20, Char.myCharz().cx, Char.myCharz().cy - 77, 2, 8, 1);
+		//	EffecMn.addEff(me);
+		//}
 	}
 
 	public void hideRongThanEff()
@@ -3700,10 +3700,10 @@ public class GameScr : mScreen, IChatable
 
 	public void callRongThan(int x, int y)
 	{
-		Res.outz("VE RONG THAN O VI TRI x= " + x + " y=" + y);
-		doiMauTroi();
-		Effect me = new Effect((!isRongNamek) ? 17 : 25, x, y - 77, 2, -1, 1);
-		EffecMn.addEff(me);
+		//Res.outz("VE RONG THAN O VI TRI x= " + x + " y=" + y);
+		//doiMauTroi();
+		//Effect me = new Effect((!isRongNamek) ? 17 : 25, x, y - 77, 2, -1, 1);
+		//EffecMn.addEff(me);
 	}
 
 	public void hideRongThan()
@@ -4197,7 +4197,7 @@ public class GameScr : mScreen, IChatable
 				if (GameCanvas.isPointerClick && GameCanvas.isPointerJustRelease)
 				{
 					ChatTextField.gI().startChat(this, string.Empty);
-					SoundMn.gI().buttonClick();
+					//SoundMn.gI().buttonClick();
 					Char.myCharz().currentMovePoint = null;
 					GameCanvas.clearAllPointerEvent();
 					return;
@@ -4447,16 +4447,16 @@ public class GameScr : mScreen, IChatable
 		//		pickItem();
 		//	}
 		//}
-		if (GameCanvas.gameTick % 100 == 0 && TileMap.mapID == 137)
-		{
-			shock_scr = 30;
-		}
-		if (isAutoPlay && GameCanvas.gameTick % 20 == 0)
-		{
-			autoPlay();
-		}
+		//if (GameCanvas.gameTick % 100 == 0 && TileMap.mapID == 137)
+		//{
+		//	shock_scr = 30;
+		//}
+		//if (isAutoPlay && GameCanvas.gameTick % 20 == 0)
+		//{
+		//	autoPlay();
+		//}
 		//updateXoSo();
-		mSystem.checkAdComlete();
+		//mSystem.checkAdComlete();
 		//SmallImage.update();
 		try
 		{
@@ -4483,12 +4483,12 @@ public class GameScr : mScreen, IChatable
 					Controller.isStopReadMessage = false;
 				}
 			}
-			checkCharFocus();
-			GameCanvas.debug("E1", 0);
+			//checkCharFocus();
+			//GameCanvas.debug("E1", 0);
 			updateCamera();
-			GameCanvas.debug("E2", 0);
+			//GameCanvas.debug("E2", 0);
 			ChatTextField.gI().update();
-			GameCanvas.debug("E3", 0);
+			//GameCanvas.debug("E3", 0);
 			for (int i = 0; i < vCharInMap.size(); i++)
 			{
 				((Char)vCharInMap.elementAt(i)).update();
@@ -4498,20 +4498,20 @@ public class GameScr : mScreen, IChatable
 				((Teleport)Teleport.vTeleport.elementAt(i)).update();
 			}
 			Char.myCharz().update();
-			if (Char.myCharz().statusMe == 1)
-			{
-			}
+			//if (Char.myCharz().statusMe == 1)
+			//{
+			//}
 			if (popUpYesNo != null)
 			{
 				popUpYesNo.update();
 			}
 			EffecMn.update();
-			GameCanvas.debug("E5x", 0);
+			//GameCanvas.debug("E5x", 0);
 			for (int i = 0; i < vMob.size(); i++)
 			{
 				((Mob)vMob.elementAt(i)).update();
 			}
-			GameCanvas.debug("E6", 0);
+			//GameCanvas.debug("E6", 0);
 			for (int i = 0; i < vNpc.size(); i++)
 			{
 				((Npc)vNpc.elementAt(i)).update();
@@ -4535,23 +4535,23 @@ public class GameScr : mScreen, IChatable
 			{
 				setSkillBarPosition();
 			}
-			GameCanvas.debug("E7", 0);
+			//GameCanvas.debug("E7", 0);
 			GameCanvas.gI().updateDust();
-			GameCanvas.debug("E8", 0);
-			updateFlyText();
+			//GameCanvas.debug("E8", 0);
+			//updateFlyText();
 			PopUp.updateAll();
 			updateSplash();
-			updateSS();
-			GameCanvas.updateBG();
-			GameCanvas.debug("E9", 0);
-			updateClickToArrow();
-			GameCanvas.debug("E10", 0);
+			//updateSS();
+			//GameCanvas.updateBG();
+			//GameCanvas.debug("E9", 0);
+			//updateClickToArrow();
+			//GameCanvas.debug("E10", 0);
 			for (int i = 0; i < vItemMap.size(); i++)
 			{
 				((ItemMap)vItemMap.elementAt(i)).update();
 			}
-			GameCanvas.debug("E11", 0);
-			GameCanvas.debug("E13", 0);
+			//GameCanvas.debug("E11", 0);
+			//GameCanvas.debug("E13", 0);
 			for (int i = Effect2.vRemoveEffect2.size() - 1; i >= 0; i--)
 			{
 				Effect2.vEffect2.removeElement(Effect2.vRemoveEffect2.elementAt(i));
@@ -4582,14 +4582,14 @@ public class GameScr : mScreen, IChatable
 				Effect2 effect5 = (Effect2)Effect2.vEffect3.elementAt(i);
 				effect5.update();
 			}
-			BackgroudEffect.updateEff();
+			//BackgroudEffect.updateEff();
 			info1.update();
 			info2.update();
-			GameCanvas.debug("E15", 0);
-			if (currentCharViewInfo != null && !currentCharViewInfo.Equals(Char.myCharz()))
-			{
-				currentCharViewInfo.update();
-			}
+			//GameCanvas.debug("E15", 0);
+			//if (currentCharViewInfo != null && !currentCharViewInfo.Equals(Char.myCharz()))
+			//{
+			//	currentCharViewInfo.update();
+			//}
 			runArrow++;
 			if (runArrow > 3)
 			{
@@ -4643,14 +4643,14 @@ public class GameScr : mScreen, IChatable
 			{
 				tMenuDelay--;
 			}
-			if (isRongThanMenu())
-			{
-				int num3 = 100;
-				while (yR - num3 < cmy)
-				{
-					cmy--;
-				}
-			}
+			//if (isRongThanMenu())
+			//{
+			//	int num3 = 100;
+			//	while (yR - num3 < cmy)
+			//	{
+			//		cmy--;
+			//	}
+			//}
 			for (int i = 0; i < Char.vItemTime.size(); i++)
 			{
 				((ItemTime)Char.vItemTime.elementAt(i)).update();
@@ -4659,7 +4659,7 @@ public class GameScr : mScreen, IChatable
 			{
 				((ItemTime)textTime.elementAt(i)).update();
 			}
-			updateChatVip();
+			//updateChatVip();
 		}
 		catch (Exception)
 		{

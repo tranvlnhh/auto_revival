@@ -171,10 +171,10 @@ public class MagicTree : Npc, IActionListener
 			p.isPaint = false;
 			ServerEffect.addServerEffect(98, cx + peaPostionX[currPeas - 1] - SmallImage.smallImg[id][3] / 2, cy + peaPostionY[currPeas - 1] - SmallImage.smallImg[id][4], 1);
 			currPeas--;
-			if (GameCanvas.gameTick % 2 == 0)
-			{
-				SoundMn.gI().HP_MPup();
-			}
+			//if (GameCanvas.gameTick % 2 == 0)
+			//{
+			//	SoundMn.gI().HP_MPup();
+			//}
 			if (currPeas == remainPeas)
 			{
 				p.isPaint = true;

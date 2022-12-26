@@ -19,7 +19,7 @@ namespace QLTK.UserControls
             InitializeComponent();
         }
         
-        private void Setting_Load(object sender, EventArgs e)
+        internal void Setting_Load()
         {
             var toado = JsonMapper.ToObject(File.ReadAllText("Data\\ToaDo.json"));
             var nhanvat = JsonMapper.ToObject(File.ReadAllText("Data\\NhanVat.json"));
@@ -40,8 +40,11 @@ namespace QLTK.UserControls
                     td4.Checked = true;
                     x.Text = (string)toado["x"];
                     y.Text = (string)toado["y"];
+                    Dashboard.x = int.Parse(x.Text);
+                    Dashboard.y = int.Parse(y.Text);
                     break;
             }
+            Dashboard.type = type;
             type = (int)nhanvat["type"];
             switch (type)
             {
@@ -51,12 +54,15 @@ namespace QLTK.UserControls
                 case 1:
                     nv2.Checked = true;
                     value.Text = (string)nhanvat["value"];
+                    Dashboard.charRevival = value.Text;
                     break;
                 case 2:
                     nv3.Checked = true;
                     value.Text = (string)nhanvat["value"];
+                    Dashboard.charRevival = value.Text;
                     break;
             }
+            Dashboard.typeChar = type;
         }
 
         private void btnSaveToaDo_Click(object sender, EventArgs e)
@@ -71,7 +77,8 @@ namespace QLTK.UserControls
             else if (td4.Checked)
                 type = 3;
 
-            if(type == 3)
+            Dashboard.type = type;
+            if (type == 3)
             {
                 File.WriteAllText("Data\\ToaDo.json", JsonMapper.ToJson(new
                 {
@@ -79,6 +86,8 @@ namespace QLTK.UserControls
                     x = x.Text,
                     y = y.Text
                 }));
+                Dashboard.x = int.Parse(x.Text);
+                Dashboard.y = int.Parse(y.Text);
                 return;
             }
             File.WriteAllText("Data\\ToaDo.json", JsonMapper.ToJson(new
@@ -111,6 +120,8 @@ namespace QLTK.UserControls
                 type = type,
                 value = value.Text
             }));
+
+            Dashboard.typeChar = type;
         }
     }
 }

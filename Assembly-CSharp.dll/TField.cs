@@ -822,7 +822,7 @@ public class TField : IActionListener
 			{
 				kb.text = currentTField.text;
 			}
-			Cout.LogWarning("SHOW KEYBOARD FOR " + currentTField.text);
+			//Cout.LogWarning("SHOW KEYBOARD FOR " + currentTField.text);
 		}
 	}
 

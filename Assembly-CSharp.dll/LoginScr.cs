@@ -246,7 +246,7 @@ public class LoginScr : mScreen, IActionListener
 	public override void switchToMe()
 	{
 		isRegistering = false;
-		SoundMn.gI().stopAll();
+		//SoundMn.gI().stopAll();
 		tfUser.isFocus = true;
 		tfPass.isFocus = false;
 		if (GameCanvas.isTouch)

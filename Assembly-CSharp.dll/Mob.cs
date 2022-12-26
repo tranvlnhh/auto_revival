@@ -501,51 +501,51 @@ public class Mob : IMapObject
 	public virtual void update()
 	{
 		GetFrame();
-		if (blindEff && GameCanvas.gameTick % 5 == 0)
-		{
-			ServerEffect.addServerEffect(113, x, y, 1);
-		}
-		if (sleepEff && GameCanvas.gameTick % 10 == 0)
-		{
-			EffecMn.addEff(new Effect(41, x, y, 3, 1, 1));
-		}
-		if (!GameCanvas.lowGraphic && status != 1 && status != 0 && !GameCanvas.lowGraphic && GameCanvas.gameTick % (15 + mobId * 2) == 0)
-		{
-			for (int i = 0; i < GameScr.vCharInMap.size(); i++)
-			{
-				Char @char = (Char)GameScr.vCharInMap.elementAt(i);
-				if (@char != null && @char.isFlyAndCharge && @char.cf == 32)
-				{
-					Char char2 = new Char();
-					char2.cx = @char.cx;
-					char2.cy = @char.cy - @char.ch;
-					if (@char.cgender == 0)
-					{
-						MonsterDart.addMonsterDart(x + dir * w, y, checkIsBoss(), -100, -100, char2, 25);
-					}
-				}
-			}
-			if (Char.myCharz().isFlyAndCharge && Char.myCharz().cf == 32)
-			{
-				Char char3 = new Char();
-				char3.cx = Char.myCharz().cx;
-				char3.cy = Char.myCharz().cy - Char.myCharz().ch;
-				if (Char.myCharz().cgender == 0)
-				{
-					MonsterDart.addMonsterDart(x + dir * w, y, checkIsBoss(), -100, -100, char3, 25);
-				}
-			}
-		}
-		if (holdEffID != 0 && GameCanvas.gameTick % 5 == 0)
-		{
-			EffecMn.addEff(new Effect(holdEffID, x, y + 24, 3, 5, 1));
-		}
+		//if (blindEff && GameCanvas.gameTick % 5 == 0)
+		//{
+		//	ServerEffect.addServerEffect(113, x, y, 1);
+		//}
+		//if (sleepEff && GameCanvas.gameTick % 10 == 0)
+		//{
+		//	EffecMn.addEff(new Effect(41, x, y, 3, 1, 1));
+		//}
+		//if (!GameCanvas.lowGraphic && status != 1 && status != 0 && !GameCanvas.lowGraphic && GameCanvas.gameTick % (15 + mobId * 2) == 0)
+		//{
+		//	for (int i = 0; i < GameScr.vCharInMap.size(); i++)
+		//	{
+		//		Char @char = (Char)GameScr.vCharInMap.elementAt(i);
+		//		if (@char != null && @char.isFlyAndCharge && @char.cf == 32)
+		//		{
+		//			Char char2 = new Char();
+		//			char2.cx = @char.cx;
+		//			char2.cy = @char.cy - @char.ch;
+		//			if (@char.cgender == 0)
+		//			{
+		//				MonsterDart.addMonsterDart(x + dir * w, y, checkIsBoss(), -100, -100, char2, 25);
+		//			}
+		//		}
+		//	}
+		//	if (Char.myCharz().isFlyAndCharge && Char.myCharz().cf == 32)
+		//	{
+		//		Char char3 = new Char();
+		//		char3.cx = Char.myCharz().cx;
+		//		char3.cy = Char.myCharz().cy - Char.myCharz().ch;
+		//		if (Char.myCharz().cgender == 0)
+		//		{
+		//			MonsterDart.addMonsterDart(x + dir * w, y, checkIsBoss(), -100, -100, char3, 25);
+		//		}
+		//	}
+		//}
+		//if (holdEffID != 0 && GameCanvas.gameTick % 5 == 0)
+		//{
+		//	EffecMn.addEff(new Effect(holdEffID, x, y + 24, 3, 5, 1));
+		//}
 		if (isFreez)
 		{
-			if (GameCanvas.gameTick % 5 == 0)
-			{
-				ServerEffect.addServerEffect(113, x, y, 1);
-			}
+			//if (GameCanvas.gameTick % 5 == 0)
+			//{
+			//	ServerEffect.addServerEffect(113, x, y, 1);
+			//}
 			long num = mSystem.currentTimeMillis();
 			if (num - last >= 1000)
 			{
@@ -600,10 +600,10 @@ public class Mob : IMapObject
 		{
 			return;
 		}
-		if (isShadown)
-		{
-			updateShadown();
-		}
+		//if (isShadown)
+		//{
+		//	updateShadown();
+		//}
 		if (vMobMove == null && arrMobTemplate[templateId].rangeMove != 0)
 		{
 			return;
@@ -620,10 +620,10 @@ public class Mob : IMapObject
 			}
 			isBusyAttackSomeOne = false;
 		}
-		if (levelBoss > 0)
-		{
-			updateSuperEff();
-		}
+		//if (levelBoss > 0)
+		//{
+		//	updateSuperEff();
+		//}
 		switch (status)
 		{
 		case 1:
@@ -1045,10 +1045,10 @@ public class Mob : IMapObject
 		if (tick < array.Length)
 		{
 			checkFrameTick(array);
-			if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w && p3 == 0 && GameCanvas.gameTick % 2 == 0)
-			{
-				SoundMn.gI().charPunch(isKick: false, 0.05f);
-			}
+			//if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w && p3 == 0 && GameCanvas.gameTick % 2 == 0)
+			//{
+			//	SoundMn.gI().charPunch(isKick: false, 0.05f);
+			//}
 		}
 		if (p1 == 0)
 		{

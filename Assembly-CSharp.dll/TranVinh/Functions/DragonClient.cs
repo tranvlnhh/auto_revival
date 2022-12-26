@@ -6,10 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using TranVinh.Helper;
 using TranVinh.Models;
+using UnityEngine;
 
 namespace TranVinh.Functions
 {
@@ -23,11 +25,19 @@ namespace TranVinh.Functions
             var cmd = (string)msg["cmd"];
             switch (cmd)
             {
+                case "set-map-zone":
+                    AutoRevival.map = (int)msg["map"];
+                    AutoRevival.zone = (int)msg["zone"];
+                    break;
+                case "isDelay":
+                    AutoRevival.isRevival = (bool)msg["delay"];
+                    break;
                 default:
                     break;
             }
         }
 
+        [Obfuscation(Feature = "Virtualization", Exclude = false)]
         internal static void Connect()
         {
             thread = 
@@ -42,15 +52,15 @@ namespace TranVinh.Functions
                         Thread.Sleep(500);
                     //}
 
-                    sendMessage(new
+                    sendMessage(new Dictionary<string, object>()
                     {
-                        cmd = "connect",
-                        id = Process.GetCurrentProcess().Id
+                        { "cmd", "connect" },
+                        { "id", Process.GetCurrentProcess().Id }
                     });
-                    sendMessage(new
+                    sendMessage(new Dictionary<string, string>()
                     {
-                        cmd = "set-status",
-                        status = Account.status
+                        { "cmd", "set-status" },
+                        { "status",  Account.status }
                     });
                     byte[] array = new byte[1024];
                     int count = sender.Receive(array);
@@ -63,17 +73,29 @@ namespace TranVinh.Functions
                     GameMidlet.PORT = (int)jsonData["server"]["port"];
                     mResources.loadLanguague((sbyte)jsonData["server"]["language"]);
 
-                    try
+                    AutoRevival.map = (int)jsonData["map"];
+                    AutoRevival.zone = (int)jsonData["zone"];
+                    AutoRevival.type = (int)jsonData["type"];
+                    if(AutoRevival.type == 3)
                     {
                         Account.x = (int)jsonData["x"];
                         Account.y = (int)jsonData["y"];
                     }
-                    catch { }
 
+                    AutoRevival.typeChar = (int)jsonData["typeChar"];
+                    if(AutoRevival.typeChar == 1)
+                        AutoRevival.charNameRevival = (string)jsonData["charRevival"];
+                    else if(AutoRevival.typeChar == 2)
+                        AutoRevival.charIdRevival = int.Parse((string)jsonData["charRevival"]);
+                    AutoRevival.delay = (bool)jsonData["delay"];
+                    GameCanvas.lowGraphic = true;
                     GameCanvas.isPlaySound = false;
                     GameCanvas.connect();
                     // Account.resetLogin();
                     Receive();
+
+                    Resources.UnloadUnusedAssets();
+                    GC.Collect();
                 }
                 catch (Exception e)
                 {
@@ -84,7 +106,13 @@ namespace TranVinh.Functions
 
             thread.Start();
         }
-
+        internal static void sendDelay()
+        {
+            sendMessage(new Dictionary<string, string>()
+            {
+                { "cmd", "isDelay" }
+            });
+        }
         static void Receive()
         {
             try
@@ -103,14 +131,14 @@ namespace TranVinh.Functions
                         if (string.IsNullOrEmpty(@string))
                             continue;
                         msg = JsonMapper.ToObject(@string);
-                        MainThreadDispatcher.dispatcher(delegate
-                        {
+                        //MainThreadDispatcher.dispatcher(delegate
+                        //{
                             onMessage(msg);
-                        });
+                        //});
                     }
                     catch (Exception e)
                     {
-                        File.WriteAllText("bug_recieve.txt", e.ToString());
+                        //File.WriteAllText("bug_recieve.txt", e.ToString());
                         continue;
                     }
                     //MainThreadDispatcher.dispatcher(delegate
@@ -136,19 +164,19 @@ namespace TranVinh.Functions
         }
         internal static void send_status(string str)
         {
-            sendMessage(new
+            sendMessage(new Dictionary<string, string>()
             {
-                cmd = "set-status",
-                status = str
+                { "cmd", "set-status" },
+                { "status", str }
             });
         }
         internal static void send_map_zone()
         {
-            sendMessage(new
+            sendMessage(new Dictionary<string, object>()
             {
-                cmd = "set-map-zone",
-                map = TileMap.mapName,
-                zone = TileMap.zoneID
+                { "cmd", "set-map-zone" },
+                { "map", TileMap.mapName },
+                { "zone", TileMap.zoneID }
             });
         }
         internal static bool Close() 
@@ -156,9 +184,9 @@ namespace TranVinh.Functions
 
             if (sender != null && sender.Connected)
             {
-                sendMessage(new
+                sendMessage(new Dictionary<string, string>()
                 {
-                    action = "close-socket"
+                    { "action", "close-socket" }
                 });
                 sender.Shutdown(SocketShutdown.Both);
                 sender.Close();

@@ -68,15 +68,15 @@ public class ItemMap : IMapObject
 		this.yEnd = yEnd;
 		vx = xEnd - x >> 2;
 		vy = 5;
-		Res.outz("playerid=  " + playerId + " myid= " + Char.myCharz().charID);
+		//Res.outz("playerid=  " + playerId + " myid= " + Char.myCharz().charID);
 	}
 
 	public ItemMap(int playerId, short itemMapID, short itemTemplateID, int x, int y, short r)
 	{
-		Res.outz("item map item= " + itemMapID + " template= " + itemTemplateID + " x= " + x + " y= " + y);
+		//Res.outz("item map item= " + itemMapID + " template= " + itemTemplateID + " x= " + x + " y= " + y);
 		this.itemMapID = itemMapID;
 		template = ItemTemplates.get(itemTemplateID);
-		Res.outz("playerid=  " + playerId + " myid= " + Char.myCharz().charID);
+		//Res.outz("playerid=  " + playerId + " myid= " + Char.myCharz().charID);
 		this.x = (xEnd = x);
 		this.y = (yEnd = y);
 		status = 1;
@@ -235,10 +235,10 @@ public class ItemMap : IMapObject
 		{
 			count = 0;
 		}
-		if (count % 10 == 0 && !GameCanvas.lowGraphic)
-		{
-			ServerEffect.addServerEffect(114, x - 5, y - 30, 1);
-		}
+		//if (count % 10 == 0 && !GameCanvas.lowGraphic)
+		//{
+		//	ServerEffect.addServerEffect(114, x - 5, y - 30, 1);
+		//}
 	}
 
 	public void paintAuraItemEff(mGraphics g)

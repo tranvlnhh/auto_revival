@@ -1,4 +1,0 @@
-System.Net.Sockets.SocketException: A blocking operation was interrupted by a call to WSACancelBlockingCall.
-
-  at System.Net.Sockets.Socket.Receive (System.Byte[] buffer) [0x00000] in <filename unknown>:0 
-  at TranVinh.Functions.DragonClient+<>c.<Connect>b__3_0 () [0x00000] in <filename unknown>:0 

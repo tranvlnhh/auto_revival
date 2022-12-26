@@ -328,7 +328,7 @@ public class Sound
 	{
 		if (status != 0)
 		{
-			Cout.LogError("CANNOT LOAD AUDIO " + filename + " WHEN LOADING " + filenametemp);
+			//Cout.LogError("CANNOT LOAD AUDIO " + filename + " WHEN LOADING " + filenametemp);
 			return;
 		}
 		filenametemp = filename;
@@ -345,10 +345,10 @@ public class Sound
 		}
 		if (i == 100)
 		{
-			Cout.LogError("TOO LONG FOR LOAD AUDIO " + filename);
+			//Cout.LogError("TOO LONG FOR LOAD AUDIO " + filename);
 			return;
 		}
-		Cout.Log("Load Audio " + filename + " done in " + i * 5 + "ms");
+		//Cout.Log("Load Audio " + filename + " done in " + i * 5 + "ms");
 	}
 
 	private static void __load(string filename, int pos)
@@ -374,7 +374,7 @@ public class Sound
 	{
 		if (status != 0)
 		{
-			Debug.LogError("CANNOT START AUDIO WHEN STARTING");
+			//Debug.LogError("CANNOT START AUDIO WHEN STARTING");
 			return;
 		}
 		volumetem = volume;
@@ -389,14 +389,14 @@ public class Sound
 				break;
 			}
 		}
-		if (i == 100)
-		{
-			Debug.LogError("TOO LONG FOR START AUDIO");
-		}
-		else
-		{
-			Debug.Log("Start Audio done in " + i * 5 + "ms");
-		}
+		//if (i == 100)
+		//{
+		///	Debug.LogError("TOO LONG FOR START AUDIO");
+		//}
+		//else
+		//{
+		//	Debug.Log("Start Audio done in " + i * 5 + "ms");
+		//}
 	}
 
 	public static void __start(float volume, int pos)
@@ -423,7 +423,7 @@ public class Sound
 	{
 		if (status != 0)
 		{
-			Debug.LogError("CANNOT STOP AUDIO WHEN STOPPING");
+			//Debug.LogError("CANNOT STOP AUDIO WHEN STOPPING");
 			return;
 		}
 		postem = pos;
@@ -437,14 +437,14 @@ public class Sound
 				break;
 			}
 		}
-		if (i == 100)
-		{
-			Debug.LogError("TOO LONG FOR STOP AUDIO");
-		}
-		else
-		{
-			Debug.Log("Stop Audio done in " + i * 5 + "ms");
-		}
+		//if (i == 100)
+		//{
+		//	Debug.LogError("TOO LONG FOR STOP AUDIO");
+		//}
+		//else
+		//{
+		//	Debug.Log("Stop Audio done in " + i * 5 + "ms");
+		//}
 	}
 
 	public static void __stop(int pos)

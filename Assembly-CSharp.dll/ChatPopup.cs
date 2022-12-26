@@ -119,7 +119,7 @@ public class ChatPopup : Effect2, IActionListener
 		scr = new Scroll();
 		int nItem = serverChatPopUp.says.Length;
 		scr.setStyle(nItem, 12, serverChatPopUp.cx, serverChatPopUp.cy - serverChatPopUp.strY + 12, serverChatPopUp.sayWidth + 2, serverChatPopUp.ch - 25, styleUPDOWN: true, 1);
-		SoundMn.gI().openDialog();
+		//SoundMn.gI().openDialog();
 	}
 
 	public static void addChatPopupMultiLine(string chat, int howLong, Npc c)
@@ -137,7 +137,7 @@ public class ChatPopup : Effect2, IActionListener
 		currChatPopup.cmdNextLine = new Command(caption, currChatPopup, 8000, null);
 		currChatPopup.cmdNextLine.x = GameCanvas.w / 2 - 35;
 		currChatPopup.cmdNextLine.y = GameCanvas.h - 35;
-		SoundMn.gI().openDialog();
+		//SoundMn.gI().openDialog();
 	}
 
 	public static ChatPopup addChatPopupWithIcon(string chat, int howLong, Npc c, int idIcon)

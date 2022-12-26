@@ -316,7 +316,8 @@ public class InfoMe
 	public void addInfo(string s, int Type)
 	{
 		TranVinh.Xmap.Pk9rXmap.Info(s);
-		s = Res.changeString(s);
+		return;
+		//s = Res.changeString(s);
 		if (info.infoWaitToShow.size() > 0 && s.Equals(((InfoItem)info.infoWaitToShow.lastElement()).s))
 		{
 			return;

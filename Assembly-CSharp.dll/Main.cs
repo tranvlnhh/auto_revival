@@ -1,4 +1,5 @@
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Threading;
 using TranVinh.Functions;
 using UnityEngine;
@@ -83,7 +84,8 @@ public class Main : MonoBehaviour
 
 	public static bool isCompactDevice = true;
 
-	private void Start()
+    [Obfuscation(Feature = "Virtualization", Exclude = false)]
+    private void Start()
 	{
 		if (started)
 		{
@@ -98,8 +100,6 @@ public class Main : MonoBehaviour
         mainThreadName = Thread.CurrentThread.Name;
 		isPC = true;
 		started = true;
-		if (isPC)
-		{
 			//level = Rms.loadRMSInt("levelScreenKN");
 			//if (level == 1)
 			//{
@@ -107,26 +107,27 @@ public class Main : MonoBehaviour
 			//}
 			//else
 			//{
-				Screen.SetResolution(1024, 600, fullscreen: false);
-			//}
-		}
-	}
+				Screen.SetResolution(200, 200, fullscreen: false);
+		//}
+
+    }
 
 	private void SetInit()
 	{
 		base.enabled = true;
-	}
+        base.useGUILayout = false;
+    }
 
 	private void OnHideUnity(bool isGameShown)
 	{
-		if (!isGameShown)
-		{
-			Time.timeScale = 0f;
-		}
-		else
-		{
-			Time.timeScale = 1f;
-		}
+		//if (!isGameShown)
+		//{
+		//	Time.timeScale = 0f;
+		//}
+		//else
+		//{
+		//	Time.timeScale = 1f;
+		//}
 	}
 
 	private void OnGUI()

@@ -300,8 +300,8 @@ public class RegisterScreen : mScreen, IActionListener
 
 	public new void switchToMe()
 	{
-		Res.outz("Res switch");
-		SoundMn.gI().stopAll();
+		//Res.outz("Res switch");
+		//SoundMn.gI().stopAll();
 		focus = 0;
 		tfUser.isFocus = true;
 		tfNgay.isFocus = false;

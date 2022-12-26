@@ -547,10 +547,10 @@ public class Hint
 		}
 		if (t == 2)
 		{
-			if (GameCanvas.isTouch)
-			{
-				GameScr.startFlyText(mResources.press_twice, x, y + 10, 0, 20, mFont.MISS_ME);
-			}
+			//if (GameCanvas.isTouch)
+			//{
+			//	GameScr.startFlyText(mResources.press_twice, x, y + 10, 0, 20, mFont.MISS_ME);
+			//}
 			paintFlare = true;
 			x += 2 * num;
 			y -= 4;

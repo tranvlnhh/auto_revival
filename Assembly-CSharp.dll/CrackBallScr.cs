@@ -167,7 +167,7 @@ public class CrackBallScr : mScreen
 			numTicket = 0;
 			checkNumTicket();
 			switchToMe();
-			SoundMn.gI().hoisinh();
+			//SoundMn.gI().hoisinh();
 		}
 	}
 
@@ -289,9 +289,9 @@ public class CrackBallScr : mScreen
 					}
 					if (listBall[j].y == listBall[j].yTo)
 					{
-						Effect me = new Effect(19, listBall[j].x - 5, listBall[j].y + 25, 2, 1, -1);
-						EffecMn.addEff(me);
-						SoundMn.gI().charFall();
+						//Effect me = new Effect(19, listBall[j].x - 5, listBall[j].y + 25, 2, 1, -1);
+						//EffecMn.addEff(me);
+						//SoundMn.gI().charFall();
 						listBall[j].isDone = true;
 						if (!isCanSkill)
 						{
@@ -329,7 +329,7 @@ public class CrackBallScr : mScreen
 				{
 					countFr = fr.Length - 1;
 					isKame = true;
-					SoundMn.gI().newKame();
+					//SoundMn.gI().newKame();
 					if (!isSendSv && timeKame - GameCanvas.timeNow < 0)
 					{
 						Service.gI().SendCrackBall(2, (byte)(checkTicket() + checkNum()));
@@ -498,7 +498,7 @@ public class CrackBallScr : mScreen
 	{
 		if (!listBall[index].isDone)
 		{
-			SoundMn.gI().getItem();
+			//SoundMn.gI().getItem();
 			long num = ((typePrice != 0) ? Char.myCharz().checkLuong() : Char.myCharz().xu);
 			if (checkTicket() >= numTicket && num < cost + price)
 			{
@@ -526,7 +526,7 @@ public class CrackBallScr : mScreen
 				if (checkTicket() + checkNum() > 0)
 				{
 					step = 2;
-					SoundMn.gI().gong();
+					//SoundMn.gI().gong();
 					Char.myCharz().setSkillPaint(GameScr.sks[13], 0);
 					timeKame = GameCanvas.timeNow + Res.random(2000, 3000);
 				}

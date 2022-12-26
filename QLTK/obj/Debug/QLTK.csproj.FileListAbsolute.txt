@@ -72,3 +72,4 @@ C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.csproj.C
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.exe
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.pdb
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\Game\QLTK.pdb
+C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.UserControls.Infomation.resources

@@ -95,7 +95,7 @@ public class Teleport
 		if (x > GameScr.cmx && x < GameScr.cmx + GameCanvas.w && y2 > 100 && !SoundMn.gI().isPlayAirShip() && !SoundMn.gI().isPlayRain())
 		{
 			createShip = true;
-			SoundMn.gI().airShip();
+			//SoundMn.gI().airShip();
 		}
 	}
 
@@ -242,7 +242,7 @@ public class Teleport
 				tHole = true;
 				if (planet < 3)
 				{
-					SoundMn.gI().pauseAirShip();
+				//	SoundMn.gI().pauseAirShip();
 					if (y % 24 != 0)
 					{
 						y -= y % 24;
@@ -315,10 +315,10 @@ public class Teleport
 			}
 			else
 			{
-				if (tPrepare == 14 && createShip)
-				{
-					SoundMn.gI().resumeAirShip();
-				}
+				//if (tPrepare == 14 && createShip)
+				//{
+				//	SoundMn.gI().resumeAirShip();
+				//}
 				if (tPrepare > 0 && type == 0)
 				{
 					if (isMe)

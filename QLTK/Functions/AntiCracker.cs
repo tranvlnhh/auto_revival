@@ -38,20 +38,21 @@ namespace QLTK.Functions
 
 
         const string HOST_IP = "103.200.22.212";
-        const string TOOL_NAME = "a/C3msOFulFCe/tpw3z/i00bOlq+qQvEyyVEBjC+f0KqRk3SgXPWyKrVk1G66h2Rjpb5wfA/2R0btE37067uIOjiidlG4IMdGh315ofQe3dWM3kJ3rZxI+sSBrU8AS88plvnvbKo9cfgW/UslEAworoDBfpjh+i5JqhW52xS5GQ=";
+        const string TOOL_NAME = "autorevival";
 
-        const string private_key_client_pem = "-----BEGIN RSA PRIVATE KEY-----\r\nMIICXAIBAAKBgQDmORJWE0b/eknTLXNBjgNtyLQ9jqNZStwfI74c3FNBCpjL2oHm\r\nW75vtioRLvIC/Nuz3EsYT0BcBoe2mJb8nyeiGHwy3t75jlb2eynhYmB+I3hAFQx2\r\n/u/gyTd7FnrFYKr5Ykg7cfwxsTrnNwk5jD+gXCHFZTaM//W1FJajKG99eQIDAQAB\r\nAoGARLOBQkhsZm6yux8UBtr/MPK0vq3jFxFc0LoU0H37JiyoXiTtoLV+Bc4hjZEp\r\nzTRxx6GUk0OLHCsisp2kaOyBoa+c1GBBYMXwzyvKtVAGOLJJH3+xPv4RLkRiq28o\r\nc5IgeDhdswxGTrvyZz4weyrTfTfTvtq9QaKheRq/ydTnLbUCQQDqpbKHdEi89XCe\r\n5RDcnh6TbggsYRLyFotDw/gBX+D6go8RUMZpjmjGp5lEUGrWTvVdJGfctX1/HnOy\r\ngKmC1jzzAkEA+yxOWZEVR253pmRmMkcYiwdhdXErvwpCiJFEkS+krsfEiMh/hK/g\r\nNowxtJMQgoOkKLHaiSuXZ5AQC1O9MD9G4wJAZIiPwCdbTtJd6UY9fjik4we+qr0A\r\nsAZmrqcU6AnbS5mKkKGqEOm6DHscWL+XtrBnwftqII8F8OPsMCud9PezbwJBAMvr\r\n9NCTEgukjE/zQ2WegzadD2siLrozwkDOcDTP0Yx1dAL5hU5c3FRtDg3lOIo+BpFj\r\nlGG5mnriY6ROoFMDjLECQFUTXnwg+owxi9H8U7iYjiMVUIMUQuEhMJEbnSWMHQ8h\r\n6hA9zL+iYLOGrN3lFIWUdYfMhZ2+rX2arP6ksqZ+KGk=\r\n-----END RSA PRIVATE KEY-----4mm8F+gVsN/Zd0vlulJj5wufB8FjOm\r\nDT4jH5lNaOjmDcKBmSPrSgbOZZIJ7Cl0TiXWtjSS7/2bzRBBUBfXvkoD2sVtlO6+\r\nkVXBEkB2OMeT8oQiyvGF+IuX/MUWlq58OoKIFX38Lt/alxBTxnPV7WP6oQIDAQAB\r\nAoGBAMI4irhPD0qT/YEzEOitzkmahXhA41VYT/wt+ZTpTBfEXrtbwHg9fLkKqVr+\r\n+pe1DQqG+hdsZ30Lt52bi5KFoFstopMQXfc/LMgeLP+wYeEkORrjPlvU19L8Xij6\r\nIhKveje6f5wj9zdqJxnNHBouR24whJy8oBWUnOrgsdP5NLJVAkEA9Le++X05OvW3\r\nwWaZ3kxOhJTq41scwP91QpMMeSAQQBHGiH7bGtOxBjXFFnQsxPEA225FvS4KE/Ob\r\n8bcpt9ZKGwJBAPCXLShDSJfUdrx+asAGqATw3zieL+xN/U5LxpmmmETU0rdR0+3L\r\niStmRrfB+dIGfxmYf2iQisdwLvtaL/stGfMCQHeOdZzKEvW9KkMwbyftu8aGQqNE\r\n1i1sIMufr85VXdsPVCFHaKAYoDnadylbJKwq2jJaE3QzU/UfZSaYR6dq59UCQQCH\r\nZHwMKXkjwHQldXr7n4NUbH0iLptHf0gqlKgp9b/BFIeUlJ8QNjd2TfNEHAxLrk4+\r\niDxDCvyeabp2xvUzg9kTAkBF8EkMQF/Ykm7HVY2wDp9nb2DEXhH/5CFsWphfct0H\r\nMwUgC3g9PVcbi7ivIuEWbuxdmjM3WhQ2Bs71WMmDlUiv\r\n-----END RSA PRIVATE KEY-----";
-        const string public_key_server_pem = "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHBF99kLXFdTYXwpn4GpSujHxT\r\nvoE3k+eDvqJc7gCzD1LiKaJhEDmS8RCJ7LJQAFiW95gGkc7F5Fc0u5sT837JhWdO\r\n78ZMQ6iUPY3c6z2YoZwE/01ejYvKZctrSstIb1c625XYl3HBVJOIRaA8w12Q6yNW\r\nVLFDOR0nQFjldIC24QIDAQAB\r\n-----END PUBLIC KEY-----";
+       
         RSACryptoServiceProvider private_key_client;
         RSACryptoServiceProvider public_key_server;
 
         void init()
         {
+            var key = "-----BEGIN RSA PRIVATE KEY-----\r\nMIICXgIBAAKBgQDCpwiv2NTJWSnOWuyHR7B+wA+zugLDsA90yV87AaVpUDCl3Day\r\njbktLkxcxxNcDfn0KYjRcPtQvp1PRRk9u0X8sSoLr1yeIPPyNoloKLxaC2jowwMt\r\nBw8LrE9/EhBTrYrwbxs4HzIa8VUu4hGsX6Tjmglk+CRX0gK97Y6VhfkZuQIDAQAB\r\nAoGBAL242oGywOujaVkFTEcqu78+6c8OfUVIpDf7UkOL/jJgg5oVwoZUFmoQF0PS\r\nkW8G/Fpb5UvmaD2yHFe4DLsbfkDzMKZw12q9TsQy4dU/0rSq8DSqb7ro9rC3UF/Q\r\n7hMdDGbokurv6ai7jBiunDV9Cw2fKUXtznYgPXOdP7DFTJDFAkEA3+kJwMeBpHXd\r\nr4vw2uEGZRJ7BtW2sMVxeCYEOxBzRiK3/owu5E3dg3A5qAn/O1Ms3BjaWKkTSLNt\r\nJ1glWgcaLwJBAN6MkPT1lA6ks0w/w9IQIVm7G5QffnhMaLZumaROeLEuzml5S9Ww\r\n0IXs3DUwags9pxIrf5n6NTx0sBxWQl4f2JcCQDwPOzF9kjW18+fBhrJ/R4LW6S8V\r\nJjLWUzBiKiJZsEHw0B+0JGPSywcVlDGRtOeJ0O+crvy3JVgL4Mx75VD3tLsCQQCD\r\nGBBni6Xcfl5z4vfp7MCIh/R165tnJ7NjC4GLzQHBdY33iZEHXrFmwqDw4AUHfBjH\r\nVkJDJKVpaF85QgK0SVQfAkEAqur26r3JNJ8HDkZHkKq54u/x4RzqensACwEDpS3M\r\nJIyic3Suhj8QtCNzAzKyH5BKshcBZXZFO5pmH92oOnDbEQ==\r\n-----END RSA PRIVATE KEY-----";
             private_key_client = new RSACryptoServiceProvider();
-            private_key_client.ImportParameters(DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)((AsymmetricCipherKeyPair)(new PemReader(new StringReader(private_key_client_pem))).ReadObject()).Private));
+            private_key_client.ImportParameters(DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)((AsymmetricCipherKeyPair)(new PemReader(new StringReader(key))).ReadObject()).Private));
 
+            key = "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvd/A3ZM7rZ+vCR2nRx33amPrj\r\n1IHxIb5yxzoLVbI03JjhaUR+xelYtn6hwDVhptshIr1OGT1jpqY8CnAde8MG3LTe\r\n47xrMPN7MHO/+UlYzvEXou2xDwZT9zxzvUFC85Ooqwz49sGPyPjJe8iN97KhKKTJ\r\nPyxMh3e8us4zEqPQoQIDAQAB\r\n-----END PUBLIC KEY-----";
             public_key_server = new RSACryptoServiceProvider();
-            public_key_server.ImportParameters(DotNetUtilities.ToRSAParameters((RsaKeyParameters)((AsymmetricKeyParameter)new PemReader(new StringReader(public_key_server_pem)).ReadObject())));
+            public_key_server.ImportParameters(DotNetUtilities.ToRSAParameters((RsaKeyParameters)((AsymmetricKeyParameter)new PemReader(new StringReader(key)).ReadObject())));
         }
 
         public bool check_key_license()
@@ -72,17 +73,20 @@ namespace QLTK.Functions
             {
                 try
                 {
-                    var respone = w.UploadValues("http://licensekey.123tool.shop/", "POST", new NameValueCollection()
+                    var dataUp = encrypt(JsonMapper.ToJson(new
                     {
-                        { "name", TOOL_NAME },
-                        { "key", "" }
+                        name = TOOL_NAME,
+                        licensekey = GetRequestLicenseCode()
+                    }));
+                    var respone = w.UploadValues("http://licensekey.123tool.pro/", "POST", new NameValueCollection()
+                    {
+                        { "data", dataUp }
                     });
-                    var a = decrypt(Encoding.UTF8.GetString(respone));
-                    var data = JsonMapper.ToObject(a);
+                    var data = JsonMapper.ToObject(decrypt(Encoding.UTF8.GetString(respone)));
                     var time_out = TimeHelper.gI().CheckTimeOut(data["check_time"].ToString());
                     if (time_out > 5000)
                     {
-                        MessageBox.Show("[" + time_out + "] " + "Time out!");
+                        Utils.notification("Time out!", MessageBoxIcon.Error);
                         return true;
 
                     }
@@ -90,7 +94,7 @@ namespace QLTK.Functions
                 }
                 catch
                 {
-                   // return true;
+                    return true;
                 }
             }
 
@@ -107,6 +111,38 @@ namespace QLTK.Functions
             return Convert.ToBase64String(public_key_server.Encrypt(Encoding.UTF8.GetBytes(str), false));
         }
 
+        public static string GetMacAddress()
+        {
+            NetworkInterface[] allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+            for (int i = 0; i < allNetworkInterfaces.Length; i++)
+            {
+                PhysicalAddress physicalAddress = allNetworkInterfaces[i].GetPhysicalAddress();
+                bool flag = physicalAddress.ToString() != string.Empty;
+                bool flag2 = flag;
+                if (flag2)
+                {
+                    return physicalAddress.ToString();
+                }
+            }
+            return string.Empty;
+        }
+
+        public static string GetMD5(string txt)
+        {
+            string text = "";
+            byte[] array = Encoding.UTF8.GetBytes(txt);
+            array = new MD5CryptoServiceProvider().ComputeHash(array);
+            foreach (byte b in array)
+            {
+                text += b.ToString("X2");
+            }
+            return text;
+        }
+
+        public static string GetRequestLicenseCode()
+        {
+            return GetMD5(GetMacAddress() + "TranVinh");
+        }
 
         bool check_host_ip(string host)
         {

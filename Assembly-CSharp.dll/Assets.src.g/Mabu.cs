@@ -147,7 +147,7 @@ internal class Mabu : Char
 		{
 			data2.readData2(patch);
 			data2.img = GameCanvas.loadImage("/effectdata/" + 103 + "/img.png");
-			Res.outz("read xong data");
+			//Res.outz("read xong data");
 		}
 		catch (Exception)
 		{

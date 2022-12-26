@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Xml.Linq;
 using TranVinh.Helper;
@@ -11,24 +12,27 @@ namespace TranVinh.Functions
 {
     internal static class AutoRevival
     {
-        static int map, zone, x, y;
+        internal static int map, zone, x, y;
         internal static int type;
         internal static int typeChar;
+        internal static string charNameRevival;
+        internal static int charIdRevival;
+        internal static bool delay, isRevival;
         static void get_toa_do()
         {
             switch (type)
             {
                 case 0:
                     x = 60;
-                    x = Utils.getYGround(60);
+                    y = Utils.getYGround(60);
                     break;
                 case 1:
                     x =  TileMap.pxw / 2;
-                    x = Utils.getYGround(TileMap.pxw / 2);
+                    y = Utils.getYGround(TileMap.pxw / 2);
                     break;
                 case 2:
                     x = TileMap.pxw - 60;
-                    x = Utils.getYGround(TileMap.pxw - 60);
+                    y = Utils.getYGround(TileMap.pxw - 60);
                     break;
                 case 3:
                     x = Account.x;
@@ -50,16 +54,18 @@ namespace TranVinh.Functions
                     {
                         if (typeChar == 1)
                         {
-                            //if (cc.cName.Contains())
-                            //{
-
-                            //}
+                            if (cc.cName.Contains(charNameRevival))
+                            {
+                                c = cc;
+                                break;
+                            }
                         }
                         else
                         {
-                            if (cc.charID == 1)
+                            if (cc.charID == charIdRevival)
                             {
-
+                                c = cc;
+                                break;
                             }
                         }
                     }
@@ -89,11 +95,53 @@ namespace TranVinh.Functions
             var myCharz = Char.myCharz();
             if(myCharz.cx != x || myCharz.cy != y)
             {
+                GC.Collect();
                 XmapController.MoveMyChar(x, y);
                 Wait(2000);
                 return;
             }
+            if (myCharz.cgender != 1)
+                return;
+            var chareRevival = get_char_revival();
+            if (myCharz.myskill.template.id != 7)
+            {
+                var s = get_skill_revival();
+                if (s == null)
+                    return;
+
+                myCharz.myskill =s;
+                Service.gI().selectSkill(7);
+                Wait(1000);
+                return;
+            }
+            if (isRevival && delay)
+                return;
+            var currTime = mSystem.currentTimeMillis();
+            var timeRetrieval = currTime - myCharz.myskill.lastTimeUseThisSkill;
+            var coolDown = myCharz.myskill.coolDown + 500;
+            if (timeRetrieval < coolDown)
+            {
+                Wait(coolDown - timeRetrieval);
+                return;
+            }
+            Service.gI().sendPlayerAttack(chareRevival);
+            myCharz.myskill.lastTimeUseThisSkill = mSystem.currentTimeMillis();
+            if (delay)
+                DragonClient.sendDelay();
             Wait(1000);
+        }
+
+        static Skill get_skill_revival()
+        {
+            var myCharz = Char.myCharz();
+            for (int i = 0; i < myCharz.vSkill.size(); i++)
+            {
+                if (((Skill)myCharz.vSkill.elementAt(i)).template.id == 7)
+                {
+                    return (Skill)myCharz.vSkill.elementAt(i);
+                }
+            }
+            return null;
         }
         #region
         private static bool IsWait;
@@ -106,7 +154,12 @@ namespace TranVinh.Functions
             TimeStartWait = mSystem.currentTimeMillis();
             TimeWait = time;
         }
-
+        private static void Wait(long time)
+        {
+            IsWait = true;
+            TimeStartWait = mSystem.currentTimeMillis();
+            TimeWait = time;
+        }
         private static bool IsWaiting()
         {
             if (IsWait && mSystem.currentTimeMillis() - TimeStartWait >= TimeWait)

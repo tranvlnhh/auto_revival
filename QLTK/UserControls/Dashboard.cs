@@ -20,6 +20,8 @@ namespace QLTK.UserControls
 {
     public partial class Dashboard : UserControl
     {
+        public static int map, zone, type, typeChar, x, y;
+        internal static string charRevival;
         public Dashboard()
         {
             InitializeComponent();
@@ -32,25 +34,39 @@ namespace QLTK.UserControls
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
+
+            new Thread(DragonServer.StartListen) { IsBackground = true }.Start();
             try
             {
                 var dataText = File.ReadAllText("Data//dataAccount.json");
                 var dataJson = JsonMapper.ToObject<Account[]>(dataText);
                 foreach (var account in dataJson)
                     list_account.Add(account);
-                new Thread(DragonServer.StartListen) { IsBackground = true }.Start();
 
+
+
+                var m = JsonMapper.ToObject(File.ReadAllText("Data//Map.json"));
+                map = (int)m["map"];
+                zone = (int)m["zone"];
+                cbbMap.SelectedIndex = (int)m["mapindex"];
+                nZone.Value = zone;
                 //list_account.ListChanged += List_account_ListChanged;
             }
             catch
             {
             }
         }
-
+        public bool checkSend;
+        public long lastTimeRevival;
         private void timer1_Tick(object sender, EventArgs e)
         {
             dataAccount.Update();
             dataAccount.Refresh();
+            if (cbDelay.Checked && !checkSend && Utils.currentTimeMillis() - lastTimeRevival >= nDelay.Value)
+            {
+                DragonServer.sendDelay();
+                checkSend = true;
+            }
         }
 
         BindingSource list_account;
@@ -127,17 +143,14 @@ namespace QLTK.UserControls
             }
         }
 
-        async Task Login(Account account)
+        public async Task Login(Account account)
         {
             if (account.process == null || account.process.HasExited)
             {
                 account.status =  "Đang mở game!";
                 //var ss = account.size.Split('x');
-                account.process = Process.Start("123Tool.exe", "-silent-crashes -disable-gpu-skinning -releaseCodeOptimization -disableManagedDebugger -accept-apiupdate -no-stereo-rendering");// -batchmode -nographics   $"-screen-width {ss[0]} -screen-height {ss[1]}");
-                while (account.process.MainWindowHandle == IntPtr.Zero)
-                {
-                    await Task.Delay(100);
-                }
+                account.process = Process.Start("123Tool.exe", "-silent-crashes -disable-gpu-skinning -releaseCodeOptimization -disableManagedDebugger -accept-apiupdate -no-stereo-rendering -batchmode -nographics");// -batchmode -nographics   $"-screen-width {ss[0]} -screen-height {ss[1]}");
+                await Task.Delay(100);
             }
         }
 
@@ -252,10 +265,7 @@ namespace QLTK.UserControls
 
         }
 
-      
-
-
-        private void btnClose_Click(object sender, EventArgs e)
+        void btnClose_Click(object sender, EventArgs e)
         {
             var list_close = get_list_account_selected_and_opened;
             if (list_close.Count == 0) 
@@ -275,5 +285,24 @@ namespace QLTK.UserControls
             ServerView.Refresh();
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var m = (string)cbbMap.SelectedItem;
+            map = int.Parse(m.Substring(1, m.IndexOf("]") - 1));
+            zone = (int)nZone.Value;
+            File.WriteAllText("Data//Map.json", JsonMapper.ToJson(new
+            {
+                map = map,
+                mapindex = cbbMap.SelectedIndex,
+                zone = zone
+            }));
+            DragonServer.sendUpdate();
+        }
+
+        public void close()
+        {
+            var accs = get_list_account_opened;
+            accs.ForEach(a => a.process.Kill());
+        }
     }
 }

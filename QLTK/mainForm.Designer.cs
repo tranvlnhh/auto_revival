@@ -41,7 +41,7 @@
             this.PanelSlider = new Siticone.Desktop.UI.WinForms.SiticonePanel();
             this.btnSetting = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnDashboard = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.HistoryBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.btnInfomation = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.update_date = new System.Windows.Forms.Timer(this.components);
             this.siticonePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -147,7 +147,7 @@
             this.siticoneHtmlLabel2.Enabled = false;
             this.siticoneHtmlLabel2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8F);
             this.siticoneHtmlLabel2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.siticoneHtmlLabel2.Location = new System.Drawing.Point(123, 27);
+            this.siticoneHtmlLabel2.Location = new System.Drawing.Point(136, 27);
             this.siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
             this.siticoneHtmlLabel2.Size = new System.Drawing.Size(21, 15);
             this.siticoneHtmlLabel2.TabIndex = 12;
@@ -161,9 +161,9 @@
             this.siticoneHtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.siticoneHtmlLabel1.Location = new System.Drawing.Point(50, 27);
             this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
-            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(73, 23);
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(86, 23);
             this.siticoneHtmlLabel1.TabIndex = 11;
-            this.siticoneHtmlLabel1.Text = "Dragonboy";
+            this.siticoneHtmlLabel1.Text = "Auto Revival";
             // 
             // PanelSlider
             // 
@@ -243,36 +243,37 @@
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // HistoryBtn
+            // btnInfomation
             // 
-            this.HistoryBtn.Animated = true;
-            this.HistoryBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.HistoryBtn.CheckedState.CustomBorderColor = System.Drawing.Color.White;
-            this.HistoryBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
-            this.HistoryBtn.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.HistoryBtn.CheckedState.Parent = this.HistoryBtn;
-            this.HistoryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HistoryBtn.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.HistoryBtn.CustomImages.Parent = this.HistoryBtn;
-            this.HistoryBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.HistoryBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.HistoryBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.HistoryBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.HistoryBtn.DisabledState.Parent = this.HistoryBtn;
-            this.HistoryBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
-            this.HistoryBtn.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistoryBtn.ForeColor = System.Drawing.Color.Gray;
-            this.HistoryBtn.HoverState.CustomBorderColor = System.Drawing.Color.White;
-            this.HistoryBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
-            this.HistoryBtn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.HistoryBtn.HoverState.Parent = this.HistoryBtn;
-            this.HistoryBtn.Location = new System.Drawing.Point(213, 12);
-            this.HistoryBtn.Name = "HistoryBtn";
-            this.HistoryBtn.PressedColor = System.Drawing.Color.White;
-            this.HistoryBtn.ShadowDecoration.Parent = this.HistoryBtn;
-            this.HistoryBtn.Size = new System.Drawing.Size(154, 45);
-            this.HistoryBtn.TabIndex = 14;
-            this.HistoryBtn.Text = "INFOMATION";
+            this.btnInfomation.Animated = true;
+            this.btnInfomation.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnInfomation.CheckedState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnInfomation.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+            this.btnInfomation.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnInfomation.CheckedState.Parent = this.btnInfomation;
+            this.btnInfomation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfomation.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnInfomation.CustomImages.Parent = this.btnInfomation;
+            this.btnInfomation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInfomation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInfomation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInfomation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInfomation.DisabledState.Parent = this.btnInfomation;
+            this.btnInfomation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+            this.btnInfomation.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfomation.ForeColor = System.Drawing.Color.Gray;
+            this.btnInfomation.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnInfomation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(23)))), ((int)(((byte)(43)))));
+            this.btnInfomation.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnInfomation.HoverState.Parent = this.btnInfomation;
+            this.btnInfomation.Location = new System.Drawing.Point(213, 12);
+            this.btnInfomation.Name = "btnInfomation";
+            this.btnInfomation.PressedColor = System.Drawing.Color.White;
+            this.btnInfomation.ShadowDecoration.Parent = this.btnInfomation;
+            this.btnInfomation.Size = new System.Drawing.Size(154, 45);
+            this.btnInfomation.TabIndex = 14;
+            this.btnInfomation.Text = "INFOMATION";
+            this.btnInfomation.Click += new System.EventHandler(this.btnInfomation_Click);
             // 
             // update_date
             // 
@@ -288,7 +289,7 @@
             this.ClientSize = new System.Drawing.Size(900, 540);
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnDashboard);
-            this.Controls.Add(this.HistoryBtn);
+            this.Controls.Add(this.btnInfomation);
             this.Controls.Add(this.PanelSlider);
             this.Controls.Add(this.siticoneHtmlLabel2);
             this.Controls.Add(this.siticoneHtmlLabel1);
@@ -323,7 +324,7 @@
         private Siticone.Desktop.UI.WinForms.SiticonePanel PanelSlider;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnSetting;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnDashboard;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton HistoryBtn;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton btnInfomation;
         private System.Windows.Forms.Timer update_date;
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using QLTK.Models;
 using System.Security.Principal;
+using QLTK.UserControls;
 
 namespace QLTK.Functions
 {
@@ -41,6 +42,18 @@ namespace QLTK.Functions
             var cmd = (string)msg["cmd"];
             switch (cmd)
             {
+                case "isDelay":
+                    mainForm.gI.dashboard.lastTimeRevival = Utils.currentTimeMillis();
+                    mainForm.gI.dashboard.checkSend = false;
+                    sendDelay(true);
+                    break;
+                case "set-status":
+                    state.account.status = (string)msg["status"];
+                    break;
+                case "set-map-zone":
+                    state.account.map = (string)msg["map"];
+                    state.account.zone = (int)msg["zone"];
+                    break;
                 case "connect":
                     int id = (int)msg["id"];
                     state.account = mainForm.gI.dashboard.get_list_account_opened.Find(account => account.process.Id == id);
@@ -55,19 +68,37 @@ namespace QLTK.Functions
                             ip = state.account.server.ip,
                             port = state.account.server.port,
                             language = state.account.server.language
-                        }
+                        },
+                        map = Dashboard.map,
+                        zone = Dashboard.zone,
+                        type = Dashboard.type,
+                        x = Dashboard.x,
+                        y = Dashboard.y,
+                        typeChar = Dashboard.typeChar,
+                        charRevival = Dashboard.charRevival,
+                        delay = mainForm.gI.dashboard.cbDelay.Checked
                     });
-                    break;
-                case "set-status":
-                    state.account.status = (string)msg["status"];
-                    break;
-                case "set-map-zone":
-                    state.account.map = (string)msg["map"];
-                    state.account.zone = (int)msg["zone"];
                     break;
                 default:
                     break;
             }
+        }
+        internal static void sendDelay(bool flag = false)
+        {
+            sendMessageAll(new
+            {
+                cmd = "isDelay",
+                delay = flag
+            });
+        }
+        internal static void sendUpdate()
+        {
+            sendMessageAll(new
+            {
+                cmd = "set-map-zone",
+                map = Dashboard.map,
+                zone = Dashboard.zone
+            });
         }
 
         internal static void StartListen()
@@ -109,7 +140,11 @@ namespace QLTK.Functions
                     new AsyncCallback(SendCallback), handler);
             });
         }
-
+        internal static void sendMessage(List<Account> accounts, object obj)
+        {
+            foreach (var a in accounts)
+                sendMessage(a, obj);
+        }
         internal static void sendMessage(Account account, object obj)
         {
             var strData = JsonMapper.ToJson(obj);
@@ -178,7 +213,7 @@ namespace QLTK.Functions
                 }
                 catch (Exception e)
                 {
-                   // MessageBox.Show(e.ToString());
+                  //  MessageBox.Show(e.ToString());
                 }
             }
 
@@ -190,6 +225,10 @@ namespace QLTK.Functions
                 handler.Close();
                 if (state.account.process != null && !state.account.process.HasExited)
                     state.account.process.Kill();
+                var dashboard = mainForm.gI.dashboard;
+                if (!dashboard.cbCheckOut.Checked)
+                    return;
+                _ = dashboard.Login(state.account);
             }
             catch
             {

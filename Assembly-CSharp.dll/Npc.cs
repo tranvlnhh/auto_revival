@@ -79,7 +79,7 @@ public class Npc : Char
 			{
 				template.name = string.Empty;
 			}
-			template.name = Res.changeString(template.name);
+			//template.name = Res.changeString(template.name);
 		}
 	}
 

@@ -70,10 +70,10 @@ public class MonsterDart : Effect2
 		this.c = c;
 		va = info.va;
 		setAngle(Res.angle(c.cx - x, c.cy - y));
-		if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
-		{
-			SoundMn.gI().mobKame(dartType);
-		}
+		//if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
+		//{
+		//	SoundMn.gI().mobKame(dartType);
+		//}
 	}
 
 	public MonsterDart(int x, int y, bool isBoss, int dame, int dameMp, int xTo, int yTo, int dartType)
@@ -88,10 +88,10 @@ public class MonsterDart : Effect2
 		this.yTo = yTo;
 		va = info.va;
 		setAngle(Res.angle(xTo - x, yTo - y));
-		if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
-		{
-			SoundMn.gI().mobKame(dartType);
-		}
+		//if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
+		//{
+		//	SoundMn.gI().mobKame(dartType);
+		//}
 		c = null;
 	}
 
@@ -141,20 +141,20 @@ public class MonsterDart : Effect2
 					{
 						c.doInjure(dame, dameMp, isCrit: false, isMob: true);
 					}
-					else
-					{
-						ServerEffect.addServerEffect(80, c, 1);
-					}
+					//else
+					//{
+					//	ServerEffect.addServerEffect(80, c, 1);
+					//}
 				}
 				Effect2.vEffect2.removeElement(this);
-				if (dameMp != -100)
-				{
-					ServerEffect.addServerEffect(81, c, 1);
-					if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
-					{
-						SoundMn.gI().explode_2();
-					}
-				}
+				//if (dameMp != -100)
+				//{
+				//	ServerEffect.addServerEffect(81, c, 1);
+				//	if (x >= GameScr.cmx && x <= GameScr.cmx + GameCanvas.w)
+				//	{
+				//		SoundMn.gI().explode_2();
+				//	}
+				//}
 			}
 			int num2 = Res.angle(dx, dy);
 			if (Math.abs(num2 - angle) < 90 || dx * dx + dy * dy > 4096)

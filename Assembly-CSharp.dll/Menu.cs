@@ -121,7 +121,7 @@ public class Menu
 				return;
 			}
 		}
-		SoundMn.gI().openMenu();
+		//SoundMn.gI().openMenu();
 		isNotClose = new bool[menuItems.size()];
 		for (int i = 0; i < isNotClose.Length; i++)
 		{
@@ -252,7 +252,7 @@ public class Menu
 			{
 				waitToPerform = 2;
 			}
-			SoundMn.gI().buttonClose();
+			//SoundMn.gI().buttonClose();
 		}
 		else if (!GameScr.gI().isRongThanMenu() && !disableClose && (GameCanvas.keyPressed[13] || mScreen.getCmdPointerLast(right)))
 		{
@@ -265,7 +265,7 @@ public class Menu
 				close = true;
 			}
 			isClose = true;
-			SoundMn.gI().buttonClose();
+			//SoundMn.gI().buttonClose();
 		}
 		if (flag)
 		{
@@ -306,7 +306,7 @@ public class Menu
 				Res.outz("menu select= " + menuSelectedItem);
 				isClose = true;
 				close = true;
-				SoundMn.gI().buttonClose();
+				//SoundMn.gI().buttonClose();
 			}
 			return;
 		}
@@ -511,7 +511,7 @@ public class Menu
 				Command command = (Command)menuItems.elementAt(menuSelectedItem);
 				if (command != null)
 				{
-					SoundMn.gI().buttonClose();
+					//SoundMn.gI().buttonClose();
 					command.performAction();
 				}
 			}

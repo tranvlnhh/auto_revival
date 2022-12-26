@@ -104,10 +104,10 @@ public class Command
 	public void performAction()
 	{
 		GameCanvas.clearAllPointerEvent();
-		if (isPlaySoundButton && ((caption != null && !caption.Equals(string.Empty) && !caption.Equals(mResources.saying)) || img != null))
-		{
-			SoundMn.gI().buttonClick();
-		}
+		//if (isPlaySoundButton && ((caption != null && !caption.Equals(string.Empty) && !caption.Equals(mResources.saying)) || img != null))
+		//{
+		//	SoundMn.gI().buttonClick();
+		//}
 		if (idAction > 0)
 		{
 			if (actionListener != null)

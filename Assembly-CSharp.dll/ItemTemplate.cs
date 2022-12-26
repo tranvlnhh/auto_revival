@@ -32,9 +32,9 @@ public class ItemTemplate
 		this.type = type;
 		this.gender = gender;
 		this.name = name;
-		this.name = Res.changeString(this.name);
+		//this.name = Res.changeString(this.name);
 		this.description = description;
-		this.description = Res.changeString(this.description);
+		//this.description = Res.changeString(this.description);
 		this.level = level;
 		this.strRequire = strRequire;
 		this.iconID = iconID;

@@ -32,7 +32,7 @@ public class ServerScr : mScreen, IActionListener
 
 	public override void switchToMe()
 	{
-		SoundMn.gI().stopAll();
+		//SoundMn.gI().stopAll();
 		base.switchToMe();
 		vecServer = new Command[1];
 			vecServer[0] = new Command(LoginScr.serverName, this, 100, null);
