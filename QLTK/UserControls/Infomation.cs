@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTK.Functions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace QLTK.UserControls
         public Infomation()
         {
             InitializeComponent();
+        }
+
+        private void Infomation_Load(object sender, EventArgs e)
+        {
+            license.Text = AntiCracker.GetRequestLicenseCode();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(license.Text);
+            MessageBox.Show("Đã copy thành công!");
         }
     }
 }
