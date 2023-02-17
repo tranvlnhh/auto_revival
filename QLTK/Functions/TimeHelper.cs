@@ -28,15 +28,12 @@ namespace QLTK.Functions
             return DateTime.ParseExact(time, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
         }
         public DateTime DateTimeNow()
-        {
-            return TimeZoneInfo.ConvertTime(DateTime.Now, timezone_vietnam);
-        }
+            => TimeZoneInfo.ConvertTime(DateTime.Now, timezone_vietnam);
         public long CheckTimeOut(string time)
-        {
-            return (DateTimeNow().Ticks - DateTimeFromString(time).Ticks) / 10000L;
-        }
-        public TimeSpan calculator(DateTime expired) {
-            return expired - DateTimeNow();
-        }
+            => (DateTimeNow().Ticks - DateTimeFromString(time).Ticks) / 10000L;
+        
+        public TimeSpan calculator(DateTime expired)
+            => expired - DateTimeNow();
+        
     }
 }

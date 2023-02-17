@@ -24,14 +24,16 @@ namespace QLTK
 {
     public partial class mainForm : Form
     {
-        static mainForm intance;
-        public static mainForm gI
-            => intance == null ? intance = new mainForm() : intance;
+        public static mainForm gI;
         public mainForm()
         {
             InitializeComponent();
             new SiticoneDragControl(this);
             new SiticoneShadowForm(this);
+
+            infomation = new Infomation();
+            infomation.Dock = DockStyle.Fill;
+            PanelSlider.Controls.Add(infomation);
 
             dashboard = new Dashboard();
             dashboard.Dock = DockStyle.Fill;
@@ -40,10 +42,6 @@ namespace QLTK
             setting = new Setting();
             setting.Dock = DockStyle.Fill;
             PanelSlider.Controls.Add(setting);
-
-            infomation = new Infomation();
-            infomation.Dock = DockStyle.Fill;
-            PanelSlider.Controls.Add(infomation);
 
         }
         public Dashboard dashboard;
@@ -126,6 +124,7 @@ namespace QLTK
                     lbDate.Text = "out of date";
                     update_date.Enabled = false;
                     update_date.Stop();
+                    btnDashboard.Enabled = false;
                 }
             }
             //TimeHelper.gI().DateTimeNow().ToString("dd/MM/yyyy HH:mm:ss");
@@ -136,7 +135,9 @@ namespace QLTK
         {
             setting.Setting_Load();
 
-            AntiCracker.gI().check_key_license();
+            btnDashboard.Enabled = AntiCracker.gI().check_key_license();
+            if (btnDashboard.Enabled)
+                btnDashboard.BringToFront();
         }
 
         private void btnController_Click(object sender, EventArgs e)
@@ -145,5 +146,9 @@ namespace QLTK
             Clipboard.SetText(AntiCracker.gI().encrypt("dragonboypro"));
         }
 
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dashboard.close();
+        }
     }
 }

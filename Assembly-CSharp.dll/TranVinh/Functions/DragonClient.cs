@@ -19,15 +19,29 @@ namespace TranVinh.Functions
     {
         internal static Thread thread;
         static Socket sender;
-
+        static string status = string.Empty;
         static void onMessage(JsonData msg)
         {
             var cmd = (string)msg["cmd"];
             switch (cmd)
             {
-                case "set-map-zone":
+                case "update":
                     AutoRevival.map = (int)msg["map"];
-                    AutoRevival.zone = (int)msg["zone"];
+                    AutoRevival.zone = (int)msg["zone"]; 
+                    AutoRevival.type = (int)msg["type"];
+                    if (AutoRevival.type == 3)
+                    {
+                        Account.x = (int)msg["x"];
+                        Account.y = (int)msg["y"];
+                    }
+
+                    AutoRevival.typeChar = (int)msg["typeChar"];
+                    if (AutoRevival.typeChar == 1)
+                        AutoRevival.charNameRevival = (string)msg["charRevival"];
+                    else if (AutoRevival.typeChar == 2)
+                        AutoRevival.charIdRevival = int.Parse((string)msg["charRevival"]);
+                    AutoRevival.delay = (bool)msg["delay"];
+                    AutoRevival.Wait(500);
                     break;
                 case "isDelay":
                     AutoRevival.isRevival = (bool)msg["delay"];
@@ -57,11 +71,7 @@ namespace TranVinh.Functions
                         { "cmd", "connect" },
                         { "id", Process.GetCurrentProcess().Id }
                     });
-                    sendMessage(new Dictionary<string, string>()
-                    {
-                        { "cmd", "set-status" },
-                        { "status",  Account.status }
-                    });
+                    send_status("Connected!");
                     byte[] array = new byte[1024];
                     int count = sender.Receive(array);
                     string @string = Encoding.UTF8.GetString(array, 0, count);
@@ -131,14 +141,14 @@ namespace TranVinh.Functions
                         if (string.IsNullOrEmpty(@string))
                             continue;
                         msg = JsonMapper.ToObject(@string);
-                        //MainThreadDispatcher.dispatcher(delegate
-                        //{
+                        MainThreadDispatcher.dispatcher(delegate
+                        {
                             onMessage(msg);
-                        //});
+                        });
                     }
                     catch (Exception e)
                     {
-                        //File.WriteAllText("bug_recieve.txt", e.ToString());
+                        File.WriteAllText("bug_recieve.txt", e.ToString());
                         continue;
                     }
                     //MainThreadDispatcher.dispatcher(delegate
@@ -162,8 +172,12 @@ namespace TranVinh.Functions
             {
             }
         }
+
         internal static void send_status(string str)
         {
+            if (str == status)
+                return;
+            status = str;
             sendMessage(new Dictionary<string, string>()
             {
                 { "cmd", "set-status" },

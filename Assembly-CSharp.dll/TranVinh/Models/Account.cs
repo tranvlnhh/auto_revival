@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TranVinh.Functions;
 
 namespace TranVinh.Models
 {
@@ -9,10 +10,9 @@ namespace TranVinh.Models
     {
         internal static string username;
         internal static string password;
-        internal static string status = "Đã kết nối!";
 
         internal static byte stepLogin = 0;
-        static int timeLogin = 3;
+        static int timeLogin = 5;
         static long currLogin = 0;
 
         internal static int x, y;
@@ -50,6 +50,7 @@ namespace TranVinh.Models
                         {
                             if (ServerListScreen.testConnect == 2)
                             {
+                                DragonClient.send_status("Waiting connect to server!");
                                 stepLogin = 1;
                                 currLogin = 0;
                                 return;
@@ -58,12 +59,14 @@ namespace TranVinh.Models
                         }
                         else
                         {
+                            DragonClient.send_status($"[{timeLogin}] Waiting for login!");
                             timeLogin--;
                         }
                         return;
                     }
                     if (stepLogin == 1)
                     {
+
                         if (GameCanvas.loginScr == null)
                             GameCanvas.loginScr = new LoginScr();
 
@@ -79,6 +82,9 @@ namespace TranVinh.Models
                     {
                         if (Char.isLoadingMap)
                         {
+
+
+                            DragonClient.send_status($"[{timeLogin}] Check connect!");
                             timeLogin--;
                             if (timeLogin <= 0)
                             {
@@ -87,6 +93,7 @@ namespace TranVinh.Models
                             return;
                         }
                         stepLogin = 3;
+
                     }
                 }
             }
@@ -94,6 +101,7 @@ namespace TranVinh.Models
             {
                 resetLogin();
                 stepLogin = 3;
+                DragonClient.send_status("Logged!");
             }
         }
     }

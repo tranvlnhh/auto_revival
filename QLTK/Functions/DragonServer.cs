@@ -95,9 +95,15 @@ namespace QLTK.Functions
         {
             sendMessageAll(new
             {
-                cmd = "set-map-zone",
+                cmd = "update",
                 map = Dashboard.map,
-                zone = Dashboard.zone
+                zone = Dashboard.zone,
+                type = Dashboard.type,
+                x = Dashboard.x,
+                y = Dashboard.y,
+                typeChar = Dashboard.typeChar,
+                charRevival = Dashboard.charRevival,
+                delay = mainForm.gI.dashboard.cbDelay.Checked
             });
         }
 

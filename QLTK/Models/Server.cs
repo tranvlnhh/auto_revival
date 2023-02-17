@@ -21,6 +21,7 @@ namespace QLTK.Models
             new Server("Vũ Trụ 8", "dragon8.teamobi.com", 14445),
             new Server("Vũ Trụ 9", "dragon9.teamobi.com", 14445),
             new Server("Vũ Trụ 10", "dragon10.teamobi.com", 14445),
+            new Server("Vũ Trụ 10", "dragon11.teamobi.com", 14445),
         };
         public string name { get; set; }
         public string ip { get; set; }

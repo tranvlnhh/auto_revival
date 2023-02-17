@@ -81,12 +81,16 @@ namespace TranVinh.Functions
             if(TileMap.mapID != map)
             {
                 if (!Pk9rXmap.IsXmapRunning)
+                {
                     XmapController.StartRunToMapId(map);
+                    DragonClient.send_status($"Go to {TileMap.mapNames[map]}!");
+                }
                 Wait(5000);
                 return;
             }
             if(TileMap.zoneID != zone)
             {
+                DragonClient.send_status($"Change to zone {zone}!");
                 Service.gI().requestChangeZone(zone);
                 Wait(1200);
                 return;
@@ -95,13 +99,20 @@ namespace TranVinh.Functions
             var myCharz = Char.myCharz();
             if(myCharz.cx != x || myCharz.cy != y)
             {
+
+                DragonClient.send_status($"Move to [{x}; {y}]!");
                 GC.Collect();
                 XmapController.MoveMyChar(x, y);
                 Wait(2000);
                 return;
             }
             if (myCharz.cgender != 1)
+            {
+                DragonClient.send_status("Not namek!");
                 return;
+            }
+
+            DragonClient.send_status("Waiting revival!");
             var chareRevival = get_char_revival();
             if (myCharz.myskill.template.id != 7)
             {
@@ -128,6 +139,7 @@ namespace TranVinh.Functions
             myCharz.myskill.lastTimeUseThisSkill = mSystem.currentTimeMillis();
             if (delay)
                 DragonClient.sendDelay();
+            DragonClient.send_status("Revived!");
             Wait(1000);
         }
 
@@ -136,9 +148,10 @@ namespace TranVinh.Functions
             var myCharz = Char.myCharz();
             for (int i = 0; i < myCharz.vSkill.size(); i++)
             {
-                if (((Skill)myCharz.vSkill.elementAt(i)).template.id == 7)
+                var s = (Skill)myCharz.vSkill.elementAt(i);
+                if (s.template.id == 7)
                 {
-                    return (Skill)myCharz.vSkill.elementAt(i);
+                    return s;
                 }
             }
             return null;
@@ -148,7 +161,7 @@ namespace TranVinh.Functions
         private static long TimeStartWait;
         private static long TimeWait;
 
-        private static void Wait(int time)
+        internal static void Wait(int time)
         {
             IsWait = true;
             TimeStartWait = mSystem.currentTimeMillis();

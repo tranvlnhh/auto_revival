@@ -32,7 +32,7 @@
             this.siticoneControlBox2 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
             this.siticoneControlBox1 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
             this.siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
-            this.siticoneHtmlLabel5 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            this.lbVersion = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             this.siticoneHtmlLabel6 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             this.lbDate = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             this.siticoneHtmlLabel3 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
@@ -81,7 +81,7 @@
             // siticonePanel1
             // 
             this.siticonePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(11)))), ((int)(((byte)(26)))));
-            this.siticonePanel1.Controls.Add(this.siticoneHtmlLabel5);
+            this.siticonePanel1.Controls.Add(this.lbVersion);
             this.siticonePanel1.Controls.Add(this.siticoneHtmlLabel6);
             this.siticonePanel1.Controls.Add(this.lbDate);
             this.siticonePanel1.Controls.Add(this.siticoneHtmlLabel3);
@@ -93,17 +93,17 @@
             this.siticonePanel1.Size = new System.Drawing.Size(900, 53);
             this.siticonePanel1.TabIndex = 10;
             // 
-            // siticoneHtmlLabel5
+            // lbVersion
             // 
-            this.siticoneHtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneHtmlLabel5.Enabled = false;
-            this.siticoneHtmlLabel5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F);
-            this.siticoneHtmlLabel5.ForeColor = System.Drawing.Color.DarkGray;
-            this.siticoneHtmlLabel5.Location = new System.Drawing.Point(844, 24);
-            this.siticoneHtmlLabel5.Name = "siticoneHtmlLabel5";
-            this.siticoneHtmlLabel5.Size = new System.Drawing.Size(41, 21);
-            this.siticoneHtmlLabel5.TabIndex = 6;
-            this.siticoneHtmlLabel5.Text = "1.0.0.0";
+            this.lbVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lbVersion.Enabled = false;
+            this.lbVersion.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F);
+            this.lbVersion.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbVersion.Location = new System.Drawing.Point(844, 24);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(41, 21);
+            this.lbVersion.TabIndex = 6;
+            this.lbVersion.Text = "1.0.0.0";
             // 
             // siticoneHtmlLabel6
             // 
@@ -302,6 +302,7 @@
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "tranvlnh";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainFrom_Load);
             this.siticonePanel1.ResumeLayout(false);
             this.siticonePanel1.PerformLayout();
@@ -315,7 +316,6 @@
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel1;
-        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel5;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel6;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel lbDate;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel3;
@@ -326,6 +326,7 @@
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnDashboard;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnInfomation;
         private System.Windows.Forms.Timer update_date;
+        internal Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel lbVersion;
     }
 }
 

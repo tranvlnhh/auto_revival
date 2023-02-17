@@ -20,7 +20,7 @@ namespace QLTK.UserControls
 
         private void Infomation_Load(object sender, EventArgs e)
         {
-            license.Text = AntiCracker.GetRequestLicenseCode();
+            license.Text = AntiCracker.gI().GetRequestLicenseCode();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

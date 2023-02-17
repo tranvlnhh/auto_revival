@@ -17,7 +17,7 @@ namespace QLTK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(mainForm.gI);
+            Application.Run(mainForm.gI = new mainForm());
         }
     }
 }

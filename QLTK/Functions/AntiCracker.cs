@@ -55,24 +55,24 @@ namespace QLTK.Functions
             public_key_server.ImportParameters(DotNetUtilities.ToRSAParameters((RsaKeyParameters)((AsymmetricKeyParameter)new PemReader(new StringReader(key)).ReadObject())));
         }
 
-        public bool check_key_license()
+        internal bool check_key_license()
         {
             if (!IsConnectedToInternet())
             {
                 MessageBox.Show("Không có mạng dùng tool kiểu gì :v", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return true;
+                return false;
             }
 
             if (check_host_ip(HOST_IP))
             {
                 MessageBox.Show("Crack kon kặk =))", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return true;
+                return false;
             }
-
-            using (WebClient w = new WebClient())
+            try
             {
-                try
+                using (WebClient w = new WebClient())
                 {
+
                     var dataUp = encrypt(JsonMapper.ToJson(new
                     {
                         name = TOOL_NAME,
@@ -82,24 +82,31 @@ namespace QLTK.Functions
                     {
                         { "data", dataUp }
                     });
-                    var data = JsonMapper.ToObject(decrypt(Encoding.UTF8.GetString(respone)));
-                    var time_out = TimeHelper.gI().CheckTimeOut(data["check_time"].ToString());
+                    var r = Encoding.UTF8.GetString(respone);
+                    r = decrypt(r);
+                    if (r == "no")
+                    {
+                        MessageBox.Show("Key không tồn tại", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    var data = JsonMapper.ToObject(r);
+                    var time_out = TimeHelper.gI().CheckTimeOut((string)data["check_time"]);
                     if (time_out > 5000)
                     {
                         Utils.notification("Time out!", MessageBoxIcon.Error);
-                        return true;
-
+                        return false;
                     }
-                    mainForm.gI.time_expired = TimeHelper.gI().DateTimeFromString(data["time_expired"].ToString());
-                }
-                catch
-                {
-                    return true;
+                    mainForm.gI.time_expired = TimeHelper.gI().DateTimeFromString((string)data["time_expired"]);
+                    //mainForm.gI.lbVersion.Text = (string)data["time_expired"];
+
                 }
             }
+            catch (Exception e)
+            {
+                return false;
+            }
 
-
-            return false;
+            return true;
         }
 
         public string decrypt(string str)
@@ -111,7 +118,7 @@ namespace QLTK.Functions
             return Convert.ToBase64String(public_key_server.Encrypt(Encoding.UTF8.GetBytes(str), false));
         }
 
-        public static string GetMacAddress()
+        string GetMacAddress()
         {
             NetworkInterface[] allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
             for (int i = 0; i < allNetworkInterfaces.Length; i++)
@@ -127,7 +134,7 @@ namespace QLTK.Functions
             return string.Empty;
         }
 
-        public static string GetMD5(string txt)
+        string GetMD5(string txt)
         {
             string text = "";
             byte[] array = Encoding.UTF8.GetBytes(txt);
@@ -139,7 +146,7 @@ namespace QLTK.Functions
             return text;
         }
 
-        public static string GetRequestLicenseCode()
+        internal string GetRequestLicenseCode()
         {
             return GetMD5(GetMacAddress() + "TranVinh");
         }
