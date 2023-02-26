@@ -30,6 +30,7 @@ namespace TranVinh.Functions
         }
         internal static void OnStarted()
         {
+            DragonClient.port = int.Parse(Environment.GetCommandLineArgs()[1]);
             DragonClient.Connect();
         }
         internal static bool OnClosing()

@@ -27,8 +27,6 @@ namespace TranVinh.Models
 
         internal static void doLogin()
         {
-            if (stepLogin == 3)
-                return;
 
             if (!ServerListScreen.loadScreen)
                 return;
@@ -100,7 +98,6 @@ namespace TranVinh.Models
             else
             {
                 resetLogin();
-                stepLogin = 3;
                 DragonClient.send_status("Logged!");
             }
         }

@@ -148,7 +148,7 @@ namespace TranVinh.Functions
             var myCharz = Char.myCharz();
             for (int i = 0; i < myCharz.vSkill.size(); i++)
             {
-                var s = (Skill)myCharz.vSkill.elementAt(i);
+                var s = myCharz.vSkill.elementAt(i) as Skill;
                 if (s.template.id == 7)
                 {
                     return s;

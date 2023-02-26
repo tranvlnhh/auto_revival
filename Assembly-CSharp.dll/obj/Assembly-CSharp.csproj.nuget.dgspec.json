@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinh6\\Desktop\\project nro\\new\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {}
+    "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinh6\\Desktop\\project nro\\new\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {
+    "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinh6\\Desktop\\project nro\\new\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\vinh6\\Desktop\\project nro\\new\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
-        "packagesPath": "C:\\Users\\vinh6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinh6\\Desktop\\project nro\\new\\auto_revival\\Assembly-CSharp.dll\\obj\\",
+        "projectPath": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\AnNhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vinh6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AnNhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +39,7 @@
       "frameworks": {
         "net35": {
           "targetAlias": "net35",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

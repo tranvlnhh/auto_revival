@@ -37,7 +37,7 @@ namespace TranVinh.Functions
                 {
                     DragonClient.sendMessage(new
                     {
-                        action = "close-socket"
+                        cmd = "close-socket"
                     });
                 }
                 

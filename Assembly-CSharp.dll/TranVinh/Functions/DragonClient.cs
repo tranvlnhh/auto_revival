@@ -50,7 +50,7 @@ namespace TranVinh.Functions
                     break;
             }
         }
-
+        internal static int port;
         [Obfuscation(Feature = "Virtualization", Exclude = false)]
         internal static void Connect()
         {
@@ -62,14 +62,14 @@ namespace TranVinh.Functions
                     sender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     //while (!sender.Connected)
                     //{
-                        sender.Connect(IPAddress.Loopback, 2602);
+                        sender.Connect(IPAddress.Loopback, port);
                         Thread.Sleep(500);
                     //}
 
-                    sendMessage(new Dictionary<string, object>()
+                    sendMessage(new 
                     {
-                        { "cmd", "connect" },
-                        { "id", Process.GetCurrentProcess().Id }
+                        cmd = "connect",
+                        id = Process.GetCurrentProcess().Id                    
                     });
                     send_status("Connected!");
                     byte[] array = new byte[1024];
@@ -101,11 +101,11 @@ namespace TranVinh.Functions
                     GameCanvas.lowGraphic = true;
                     GameCanvas.isPlaySound = false;
                     GameCanvas.connect();
-                    // Account.resetLogin();
+                    // Account.resetLogin()
+                    Resources.UnloadUnusedAssets();
+                    GC.Collect();;
                     Receive();
 
-                    Resources.UnloadUnusedAssets();
-                    GC.Collect();
                 }
                 catch (Exception e)
                 {
@@ -118,46 +118,50 @@ namespace TranVinh.Functions
         }
         internal static void sendDelay()
         {
-            sendMessage(new Dictionary<string, string>()
+            sendMessage(new
             {
-                { "cmd", "isDelay" }
+                cmd = "isDelay"
             });
         }
         static void Receive()
         {
-            try
+            int z = 0;
+            while(status == "Connected!")
             {
-                while (true)
+                if(z == 10)
+                    sendMessage(new
+                    {
+                        cmd = "close-socket"
+                    });
+
+                z++;
+                Thread.Sleep(1000);
+            }
+            while (true)
+            {
+                JsonData msg;
+
+                byte[] array = new byte[1024];
+                try
                 {
-                    JsonData msg;
+                    int count = sender.Receive(array);
+                    var @string = Encoding.UTF8.GetString(array, 0, count);
 
-                    byte[] array = new byte[1024];
-                    try
-                    {
-                        int count = sender.Receive(array);
-                        var @string = Encoding.UTF8.GetString(array, 0, count);
-
-                        // File.WriteAllText("a.txt", @string);
-                        if (string.IsNullOrEmpty(@string))
-                            continue;
-                        msg = JsonMapper.ToObject(@string);
-                        MainThreadDispatcher.dispatcher(delegate
-                        {
-                            onMessage(msg);
-                        });
-                    }
-                    catch (Exception e)
-                    {
-                        File.WriteAllText("bug_recieve.txt", e.ToString());
+                    // File.WriteAllText("a.txt", @string);
+                    if (string.IsNullOrEmpty(@string))
                         continue;
-                    }
-                    //MainThreadDispatcher.dispatcher(delegate
-                    //{
-                    //    this.onMessage(msg);
-                    //});
+                    msg = JsonMapper.ToObject(@string);
+                    MainThreadDispatcher.dispatcher(delegate
+                    {
+                        onMessage(msg);
+                    });
+                }
+                catch (Exception e)
+                {
+                    File.WriteAllText("bug_recieve.txt", e.ToString());
+                    continue;
                 }
             }
-            catch { }
         }
 
         internal static void sendMessage(object obj)
@@ -178,19 +182,19 @@ namespace TranVinh.Functions
             if (str == status)
                 return;
             status = str;
-            sendMessage(new Dictionary<string, string>()
+            sendMessage(new
             {
-                { "cmd", "set-status" },
-                { "status", str }
+                cmd = "set-status",
+                status = str 
             });
         }
         internal static void send_map_zone()
         {
-            sendMessage(new Dictionary<string, object>()
+            sendMessage(new
             {
-                { "cmd", "set-map-zone" },
-                { "map", TileMap.mapName },
-                { "zone", TileMap.zoneID }
+                cmd = "set-map-zone",
+                map =  TileMap.mapName,
+                zone = TileMap.zoneID
             });
         }
         internal static bool Close() 
@@ -198,9 +202,9 @@ namespace TranVinh.Functions
 
             if (sender != null && sender.Connected)
             {
-                sendMessage(new Dictionary<string, string>()
+                sendMessage(new
                 {
-                    { "action", "close-socket" }
+                    cmd = "close-socket"
                 });
                 sender.Shutdown(SocketShutdown.Both);
                 sender.Close();

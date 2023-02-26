@@ -63,11 +63,6 @@ namespace QLTK.Functions
                 return false;
             }
 
-            if (check_host_ip(HOST_IP))
-            {
-                MessageBox.Show("Crack kon kặk =))", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
             try
             {
                 using (WebClient w = new WebClient())

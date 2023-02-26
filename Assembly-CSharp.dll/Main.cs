@@ -96,19 +96,12 @@ public class Main : MonoBehaviour
 			Thread.CurrentThread.Name = "Main";
 		}
 
-        Events.OnStarted();
-        mainThreadName = Thread.CurrentThread.Name;
+		//Events.OnStarted();
+		mainThreadName = Thread.CurrentThread.Name;
 		isPC = true;
 		started = true;
-			//level = Rms.loadRMSInt("levelScreenKN");
-			//if (level == 1)
-			//{
-			//	Screen.SetResolution(720, 320, fullscreen: false);
-			//}
-			//else
-			//{
 				Screen.SetResolution(200, 200, fullscreen: false);
-		//}
+		
 
     }
 
@@ -215,6 +208,7 @@ public class Main : MonoBehaviour
 			Key.mapKeyPC();
 			SoundMn.gI().loadSound(TileMap.mapID);
 			g.CreateLineMaterial();
+			Events.OnStarted();
 		}
 	}
 

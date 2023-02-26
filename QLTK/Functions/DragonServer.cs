@@ -107,15 +107,23 @@ namespace QLTK.Functions
             });
         }
 
+        internal static int port = 2602;
         internal static void StartListen()
         {
-            //ip address
-            var localEndPoint = new IPEndPoint(IPAddress.Any, 2602);
+            create:
+            try
+            {             //ip address
+                var localEndPoint = new IPEndPoint(IPAddress.Any, port);
 
-            // starting server
-            listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            listener.Bind(localEndPoint);
-            listener.Listen(100);
+                // starting server
+                listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                listener.Bind(localEndPoint);
+                listener.Listen(100);
+            }
+            catch {
+                port++;
+                goto create;
+            }
             try
             {
                 while (true)

@@ -73,3 +73,18 @@ C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.exe
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.pdb
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\Game\QLTK.pdb
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\QLTK\obj\Debug\QLTK.UserControls.Infomation.resources
+C:\Users\AnNhan\Desktop\auto_revival\Game\QLTK.exe.config
+C:\Users\AnNhan\Desktop\auto_revival\Game\QLTK.exe
+C:\Users\AnNhan\Desktop\auto_revival\Game\QLTK.pdb
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.csproj.AssemblyReference.cache
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.csproj.SuggestedBindingRedirects.cache
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.mainForm.resources
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.Properties.Resources.resources
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.UserControls.Dashboard.resources
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.UserControls.Infomation.resources
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.UserControls.Setting.resources
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.csproj.GenerateResource.cache
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.csproj.CoreCompileInputs.cache
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.csproj.CopyComplete
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.exe
+C:\Users\AnNhan\Desktop\auto_revival\QLTK\obj\Debug\QLTK.pdb

@@ -147,10 +147,9 @@ namespace QLTK.UserControls
         {
             if (account.process == null || account.process.HasExited)
             {
-                account.status =  "Đang mở game!";
-                //var ss = account.size.Split('x');
-                account.process = Process.Start("123Tool.exe", "-silent-crashes -disable-gpu-skinning -releaseCodeOptimization -disableManagedDebugger -accept-apiupdate -no-stereo-rendering -batchmode -nographics");// -batchmode -nographics   $"-screen-width {ss[0]} -screen-height {ss[1]}");
-                await Task.Delay(100);
+                account.status =  "Opening!";
+                account.process = Process.Start("123Tool.exe", $"{DragonServer.port} -silent-crashes -disable-gpu-skinning -releaseCodeOptimization -disableManagedDebugger -accept-apiupdate -no-stereo-rendering -batchmode -nographics");// -batchmode -nographics   $"-screen-width {ss[0]} -screen-height {ss[1]}");
+                await Task.Delay(500);
             }
         }
 

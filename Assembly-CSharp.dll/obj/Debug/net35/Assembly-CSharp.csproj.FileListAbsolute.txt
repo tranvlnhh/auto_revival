@@ -28,3 +28,13 @@ C:\Users\vinh6\Desktop\project nro\new\auto_revival\Assembly-CSharp.dll\bin\Debu
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\LitJson.dll
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\UnityEngine.dll
 C:\Users\vinh6\Desktop\project nro\new\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.CopyComplete
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.dll
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.pdb
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\Assembly-CSharp.dll
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\Assembly-CSharp.pdb
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\LitJson.dll
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\bin\Debug\net35\UnityEngine.dll
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.CopyComplete
