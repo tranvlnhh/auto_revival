@@ -242,6 +242,8 @@ namespace QLTK.Functions
                 var dashboard = mainForm.gI.dashboard;
                 if (!dashboard.cbCheckOut.Checked)
                     return;
+                if (state.account.status == "Acc sai!")
+                    return;
                 _ = dashboard.Login(state.account);
             }
             catch

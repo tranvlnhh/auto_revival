@@ -96,7 +96,7 @@ namespace QLTK.Functions
 
                 }
             }
-            catch ()
+            catch
             {
                 return false;
             }

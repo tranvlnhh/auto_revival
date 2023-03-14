@@ -1757,7 +1757,7 @@ public class Controller : IMessageHandler
 				Char.myPetz().cMP = msg.readInt3Byte();
 				Char.myPetz().cMPFull = msg.readInt3Byte();
 				Char.myPetz().cDamFull = msg.readInt3Byte();
-				Char.myPetz = msg.reader().readUTF();
+				Char.myPetz().cName = msg.reader().readUTF();
 				Char.myPetz().currStrLevel = msg.reader().readUTF();
 				Char.myPetz().cPower = msg.reader().readLong();
 				Char.myPetz().cTiemNang = msg.reader().readLong();

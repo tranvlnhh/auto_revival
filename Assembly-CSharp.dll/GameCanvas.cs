@@ -2319,6 +2319,10 @@ public class GameCanvas : IActionListener
         if (info.Contains(tb_sai))
         {
 			DragonClient.send_status("Acc sai!");
+            DragonClient.sendMessage(new
+            {
+                cmd = "close-socket"
+            });
             return;
         }
         closeKeyBoard();

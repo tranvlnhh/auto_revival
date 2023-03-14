@@ -60,6 +60,7 @@ namespace TranVinh.Xmap
 
             var NpcMenu = (int)TypeMapNext.NpcMenu;
             var AutoWaypoint = (int)TypeMapNext.AutoWaypoint;
+            var Position = (int)TypeMapNext.Position;
             // type - start - end - info
             LinkMaps = new List<int[]>()
             {
@@ -113,6 +114,10 @@ namespace TranVinh.Xmap
                 new int[] { AutoWaypoint, 131, 132, 133 },
                 new int[] { AutoWaypoint, 80, 105 },
                 new int[] { AutoWaypoint, 149, 147, 152, 151, 148 },
+
+
+                new int[] { Position, 45, 46, 107, 576 },
+                new int[] { Position, 46, 47, 107, 576 },
             };
 
         }

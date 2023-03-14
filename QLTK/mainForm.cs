@@ -150,5 +150,6 @@ namespace QLTK
         {
             dashboard.close();
         }
+
     }
 }
