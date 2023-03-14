@@ -741,6 +741,7 @@ public class GameCanvas : IActionListener
 		//{
 		//	startOKDlg(mResources.maychutathoacmatsong);
 		//}
+		Account.resetLogin();
 		mSystem.endKey();
 	}
 

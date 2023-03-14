@@ -95,11 +95,11 @@ namespace TranVinh.Models
                     }
                 }
             }
-            else
-            {
-                resetLogin();
-                DragonClient.send_status("Logged!");
-            }
+            //else
+            //{
+            //    resetLogin();
+            //    DragonClient.send_status("Logged!");
+            //}
         }
     }
 }

@@ -556,25 +556,10 @@ public class ServerListScreen : mScreen, IActionListener
 		}
 		if (idAction == 2)
 		{
-			stopDownload = false;
-			cmdDownload = new Command(mResources.huy, this, 4, null);
-			cmdDownload.x = GameCanvas.w / 2 - mScreen.cmdW / 2;
-			cmdDownload.y = GameCanvas.hh + 65;
-			right = null;
-			if (!GameCanvas.isTouch)
-			{
-				cmdDownload.x = GameCanvas.w / 2 - mScreen.cmdW / 2;
-				cmdDownload.y = GameCanvas.h - mScreen.cmdH - 1;
-			}
-			center = new Command(string.Empty, this, 4, null);
 			if (!isGetData)
 			{
 				Service.gI().getResource(1, null);
-				if (!GameCanvas.isTouch)
-				{
-					cmdDownload.isFocus = true;
-					center = new Command(string.Empty, this, 4, null);
-				}
+				
 				isGetData = true;
 			}
 		}

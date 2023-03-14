@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {
+    "C:\\Users\\Admin\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
         "projectName": "Assembly-CSharp",
-        "projectPath": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
-        "packagesPath": "C:\\Users\\AnNhan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AnNhan\\Desktop\\auto_revival\\Assembly-CSharp.dll\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\auto_revival\\Assembly-CSharp.dll\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\auto_revival\\Assembly-CSharp.dll\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AnNhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +39,7 @@
       "frameworks": {
         "net35": {
           "targetAlias": "net35",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

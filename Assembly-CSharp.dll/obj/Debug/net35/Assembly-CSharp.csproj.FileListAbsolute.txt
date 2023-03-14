@@ -38,3 +38,5 @@ C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembl
 C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\AnNhan\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.csproj.CopyComplete
+C:\Users\Admin\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.dll
+C:\Users\Admin\Desktop\auto_revival\Assembly-CSharp.dll\obj\Debug\net35\Assembly-CSharp.pdb

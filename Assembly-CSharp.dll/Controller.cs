@@ -1183,8 +1183,8 @@ public class Controller : IMessageHandler
 						ServerListScreen.loadScreen = false;
 						GameCanvas.serverScreen.show2();
 								GameCanvas.serverScreen.perform(2, null);
-
-                    }
+                                DragonClient.send_status("Downloading data ...");
+                            }
 					else
 					{
 						////Res.outz("login ngay");
@@ -1218,7 +1218,9 @@ public class Controller : IMessageHandler
 						sbyte[] data2 = new sbyte[num121];
 						msg.reader().read(ref data2, 0, num121);
 						Rms.saveRMS(filename, data2);
-					}
+
+                                DragonClient.send_status($"[{ServerListScreen.percent}%] Downloading data ...");
+                            }
 					catch (Exception)
 					{
 						GameCanvas.startOK(mResources.pls_restart_game_error, 8885, null);
@@ -1755,7 +1757,7 @@ public class Controller : IMessageHandler
 				Char.myPetz().cMP = msg.readInt3Byte();
 				Char.myPetz().cMPFull = msg.readInt3Byte();
 				Char.myPetz().cDamFull = msg.readInt3Byte();
-				Char.myPetz().cName = msg.reader().readUTF();
+				Char.myPetz = msg.reader().readUTF();
 				Char.myPetz().currStrLevel = msg.reader().readUTF();
 				Char.myPetz().cPower = msg.reader().readLong();
 				Char.myPetz().cTiemNang = msg.reader().readLong();
@@ -5517,10 +5519,10 @@ public class Controller : IMessageHandler
 					break;
 				}
 				catch (Exception)
-				{
-					break;
-				}
-			}
+				{}
+                DragonClient.send_status("Logged!");
+                break;
+            }
 			case 4:
 				//GameCanvas.debug("SA23", 2);
 				Char.myCharz().xu = msg.reader().readLong();
